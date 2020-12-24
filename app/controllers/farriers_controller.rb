@@ -1,0 +1,2 @@
+class FarriersController < ApplicationController
+end

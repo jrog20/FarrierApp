@@ -1,0 +1,2 @@
+class Farrier < ApplicationRecord
+end

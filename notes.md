@@ -1,6 +1,6 @@
 User Story:
 
-As a Farrier I want to catalog information on all my clients (horses) and organize my appointments in order to always be preparred with materials and my time.
+As a Farrier I want to catalog information on all my clients (horses) and organize my appointments in order to always be prepared with materials and my time.
 
 Models/Migrations:
 
@@ -56,7 +56,8 @@ has_many :horses
 has_many :farriers, through: ?
 has_many :appointments
 has_many :barns, through: horses?
-t.string :name
+t.string :first_name
+t.string :last_name
 t.string :phone
 t.string :email
 
@@ -68,8 +69,13 @@ has_many :farriers, through: :horses
 has_many :owners, through: :horses
 has_many :appointments, through: horses??
 t.string :name
+t.string :manager_name
 t.string :phone
 t.string :email
+t.string :address
+t.string :city
+t.string :state
+t.string :zip_code
 
 Views:
 
