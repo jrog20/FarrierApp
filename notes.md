@@ -6,9 +6,9 @@ Models/Migrations:
 
 FARRIER (USER)
 has_many :appointments
-has_many :horses, through :appointments
-*Add on* has_many :owners, through :horses
-*Add on* has_many :barns, through :owners
+has_many :horses, through: :appointments
+*Add on* has_many :owners, through: :horses
+*Add on* has_many :barns, through: :owners
 t.string :first_name
 t.string :last_name
 t.string :username
@@ -18,7 +18,7 @@ t.string :company_name
 
 HORSE
 has_many :appointments
-belongs_to :farrier
+belongs_to :farrier -OR- has_many :farriers, through: :appointments
 *Add on* belongs_to :owner
 *Add on* belongs_to :barn
 t.string :name
@@ -44,6 +44,7 @@ belongs_to :horse
 *Add on* belongs_to :barn
 t.datetime :appointment_date
 :time?
+t.string :comments (a place for the Farrier to put notes about this specific appointment)
 t.integer :farrier_id
 t.integer :horse_id
 *t.integer :owner_id*
