@@ -42,9 +42,9 @@ belongs_to :farrier
 belongs_to :horse
 *Add on* belongs_to :owner
 *Add on* belongs_to :barn
-t.datetime :appointment_date
-:time?
-t.string :comments (a place for the Farrier to put notes about this specific appointment)
+t.datetime :start
+t.datetime :end
+t.text :comments (a place for the Farrier to put notes about this specific appointment)
 t.integer :farrier_id
 t.integer :horse_id
 *t.integer :owner_id*
