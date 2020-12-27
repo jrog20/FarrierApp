@@ -19,6 +19,6 @@ class FarriersController < ApplicationController
   private
 
   def farrier_params
-    params.require(:farrier).permit(:first_name, :last_name, username, :email, :password, :company_name)
+    params.require(:farrier).permit(:first_name, :last_name, :username, :email, :password, :company_name)
   end
 end
