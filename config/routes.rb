@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'static/home'
   resources :appointments
   resources :horses
   resources :farriers
