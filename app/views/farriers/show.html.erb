@@ -1,0 +1,5 @@
+<h2>Welcome<%= @farrier.first_name %>!</h2>
+ 
+<% @farrier.horses.each do |horse| %>
+  <%= link_to horse.name, horse_path(horse) %>
+<% end %>
