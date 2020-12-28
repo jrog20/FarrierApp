@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home', to: 'static#home'
+  root to: 'static#home'
   resources :appointments
   resources :horses
   resources :farriers

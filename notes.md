@@ -85,6 +85,16 @@ Views:
     Home, Sign-Up, Log-In
   b) Top Nav Bar when user logged in:
     Home, Farrier's Profile page, Log Out
+
+Add to View/Layouts/Application:
+<% if current_farrier %>
+  <a class="navbar-brand" href="<%= farrier_path(current_farrier) %>"><%= current_user.name %>'s profile</a>
+  <a class="navbar-brand" href="/logout">Log Out</a>
+<% else %>
+  <a class="navbar-brand" href="<%= new_farrier_path %>">Sign Up</a>
+  <a class="navbar-brand" href="/signin">Sign In</a>
+<% end %>
+
 2) /users/new => Sign-Up, posts to /users/:id
 3) /sigin => Log-In, posts to /users/:id
 4) /users/:id => Profile page/List of all horses belonging to the logged in Farrier with links to each horse's name Plus a calendar view by month(?) with all current horses scheduled, also with the ability to click on the horse's name to see that horse's info page.
