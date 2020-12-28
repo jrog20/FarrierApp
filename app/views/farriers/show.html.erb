@@ -1,5 +1,12 @@
-<h2>Welcome<%= @farrier.first_name %>!</h2>
+<h2>Welcome<%= @farrier.first_name @farrier.last_name%>!</h2>
+<h3><%= @farrier.company_name %>
  
 <% @farrier.horses.each do |horse| %>
   <%= link_to horse.name, horse_path(horse) %>
+<% end %>
+
+<% @farrier.appointments.each do |appointment| %>
+  <%= link_to appointment.start.strftime("%B %d, %Y at %k:%M"), appointment_path(appointment) %>
+  <%= link_to appointment.horse.name, horse_path(appointment.horse) %>
+  <br>
 <% end %>
