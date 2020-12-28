@@ -1,0 +1,7 @@
+<h1>Horses</h1>
+<ul>
+  <% @horses.each do |horse| %>
+    <li>Name: <%= link_to horse.name, horse_path(horse) %> 
+    Next Appointment: <%= horse.appointments.last %></li>
+  <% end %>
+</ul>

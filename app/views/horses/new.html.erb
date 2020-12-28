@@ -1,0 +1,26 @@
+<h1>Add a New Horse</h1>
+
+<%= form_for @horse do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %>
+  <%= f.label "Needs Shoes?" %>
+  <%= f.check_box :needs_shoes %>
+  <%= f.label "Front Shoes?" %>
+  <%= f.check_box :front_shoes %>
+  <%= f.label "Hind Shoes?" %>
+  <%= f.check_box :hind_shoes %>
+  <%= f.label "Winter Shoes?" %>
+  <%= f.check_box :winter_shoes %>
+  <%= f.label "Pad?" %>
+  <%= f.check_box :pads %>
+  <%= f.label "Shoe Size" %>
+  <%= f.number_field :shoe_size %>
+  <%= f.label "Temperament" %>
+  <%= f.text_area :temperament %>
+  <%= f.label "Schedule" %>
+  <%= f.text_field :schedule %>
+  <%= f.label "Comments" %>
+  <%= f.text_area :comments %>
+
+  <%= f.submit %>
+<% end %>

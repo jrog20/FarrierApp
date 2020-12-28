@@ -1,0 +1,21 @@
+<h1><%= @horse.name %></h1>
+
+<ul>
+  <li>Needs Shoes?: <%= @horse.needs_shoes %></li>
+  <li>Front Shoes?: <%= @horse.front_shoes %></li>
+  <li>Hind Shoes?: <%= @horse.hind_shoes %></li>
+  <li>Winter Shoes?: <%= @horse.winter_shoes %></li>
+  <li>Pads?: <%= @horse.pads %></li>
+  <li>Shoe Size: <%= @horse.shoe_size %></li>
+  <li>Temperament: <%= @horse.temperament %></li>
+  <li>Schedule: <%= @horse.schedule %></li>
+  <li>Comments: <%= @horse.comments %></li>
+  </ul>
+
+<ul>
+  Number of Times Shod: <%= @horse.appointments.length %>
+    <% @horse.appointments.each do |appointment| %>
+    <li><%= link_to appointment.farrier.company_name, farrier_path(appointment.farrier) %></li>
+    <li><%= link_to appointment.start.strftime("%B %d, %Y at %k:%M"), appointment_path(appointment)%></li>
+  <% end %>
+</ul>
