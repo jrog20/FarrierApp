@@ -1,0 +1,5 @@
+<h1>Appointments</h1>
+
+<%= @appointment.start.to_formatted_s(:long) %>
+<%= link_to @appointment.horse.name, horse_path(@appointment.horse) %>
+<%= link_to @appointment.farrier.first_name, farrier_path(@appointment.farrier) %>
