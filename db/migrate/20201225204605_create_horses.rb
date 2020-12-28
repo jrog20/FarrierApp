@@ -11,7 +11,6 @@ class CreateHorses < ActiveRecord::Migration[6.0]
       t.text :temperament
       t.string :schedule
       t.text :comments
-      t.belongs_to :farrier, null: false, foreign_key: true
 
       t.timestamps
     end
