@@ -8,7 +8,7 @@ class FarriersController < ApplicationController
       session[:farrier_id] = @farrier.id
       redirect_to farrier_path(@farrier)
     else
-      render 'new'
+      render :new
     end
   end
 

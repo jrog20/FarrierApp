@@ -6,7 +6,7 @@ Models/Migrations:
 
 FARRIER (USER)
 has_many :appointments
-has_many :horses, through: :appointments
+has_many :horses
 *Add on* has_many :owners, through: :horses
 *Add on* has_many :barns, through: :owners
 t.string :first_name

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'static#home'
+  root to: 'sessions#home'
+
+  get '/signup' => 'farriers#new'
+
   resources :appointments
   resources :horses
   resources :farriers
