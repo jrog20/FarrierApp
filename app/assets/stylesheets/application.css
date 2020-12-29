@@ -18,18 +18,9 @@ body {
   padding-top: 70px;
   padding-bottom: 30px;
   background-image: url("white_boards.jpg"); /* The image used */
-  background-color: rgb(182, 140, 140); /* Used if the image is unavailable */
-  height: 500px; /* You must set a specified height */
+  background-color: rgb(253, 252, 252); /* Used if the image is unavailable */
+  height: 800px; /* You must set a specified height */
   background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
+  background-repeat: repeat-y; /* Do not repeat the image */
   background-size: cover;
-}
-
-.hero-image {
-  background-image: url("tan_boards.jpg"); /* The image used */
-  background-color: #ccbdbd; /* Used if the image is unavailable */
-  height: 500px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
 }
