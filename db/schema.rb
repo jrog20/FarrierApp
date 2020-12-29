@@ -46,10 +46,13 @@ ActiveRecord::Schema.define(version: 2020_12_25_210233) do
     t.text "temperament"
     t.string "schedule"
     t.text "comments"
+    t.integer "farrier_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["farrier_id"], name: "index_horses_on_farrier_id"
   end
 
   add_foreign_key "appointments", "farriers"
   add_foreign_key "appointments", "horses"
+  add_foreign_key "horses", "farriers"
 end

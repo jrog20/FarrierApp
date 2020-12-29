@@ -1,4 +1,4 @@
 class Horse < ApplicationRecord
-  has_many :farriers, through: :appointments
+  belongs_to :farrier
   has_many :appointments
 end
