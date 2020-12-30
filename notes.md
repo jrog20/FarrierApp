@@ -92,7 +92,7 @@ Add to View/Layouts/Application:
   <a class="navbar-brand" href="/logout">Log Out</a>
 <% else %>
   <a class="navbar-brand" href="<%= new_farrier_path %>">Sign Up</a>
-  <a class="navbar-brand" href="/signin">Sign In</a>
+  <a class="navbar-brand" href="/login">Log In</a>
 <% end %>
 
 2) /farriers/new => Sign-Up, posts to /farriers/:id
