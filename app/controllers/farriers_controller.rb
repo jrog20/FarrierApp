@@ -14,7 +14,7 @@ class FarriersController < ApplicationController
 
   def show
     @farrier = Farrier.find_by_id(params[:id])
-    redirect_to '/' if !@user
+    redirect_to '/' if !@farrier
   end
 
   private
