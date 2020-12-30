@@ -8,7 +8,7 @@ FARRIER (USER)
 has_many :appointments
 has_many :horses
 *Add on* has_many :owners, through: :horses
-*Add on* has_many :barns, through: :owners
+*Add on* has_many :barns, through: :horses
 t.string :first_name
 t.string :last_name
 t.string :username
@@ -40,8 +40,8 @@ t.integer :farrier_id
 APPOINTMENT - Join Table
 belongs_to :farrier
 belongs_to :horse
-*Add on* belongs_to :owner
 *Add on* belongs_to :barn
+*Add on* belongs_to :owner => I DON'T THINK I NEED THIS
 t.datetime :start
 t.datetime :end
 t.text :comments (a place for the Farrier to put notes about this specific appointment)
@@ -50,25 +50,25 @@ t.integer :horse_id
 *t.integer :owner_id*
 *t.integer :barn_id*
 
-*Potential Add On #1*
+*Add On #1*
 
 OWNER
 has_many :horses
-has_many :farriers, through: ?
-has_many :appointments
-has_many :barns, through: horses?
+has_many :farriers, through: :horses
+has_many :appointments, through: :horses
+has_many :barns, through: :horses
 t.string :first_name
 t.string :last_name
 t.string :phone
 t.string :email
 
-*Potential Add On #2*
+*Add On #2*
 
 BARN
 has_many :horses
 has_many :farriers, through: :horses
 has_many :owners, through: :horses
-has_many :appointments, through: horses??
+has_many :appointments, through: :horses
 t.string :name
 t.string :manager_name
 t.string :phone
@@ -80,7 +80,7 @@ t.string :zip_code
 
 Views:
 
-1) '/' => Home/Welcome: Explains purpose of app.
+1) '/' => sessions/home: Explains purpose of app.
   a) Top Nav Bar when user not logged in:
     Home, Sign-Up, Log-In
   b) Top Nav Bar when user logged in:
@@ -88,18 +88,20 @@ Views:
 
 Add to View/Layouts/Application:
 <% if current_farrier %>
-  <a class="navbar-brand" href="<%= farrier_path(current_farrier) %>"><%= current_user.name %>'s profile</a>
+  <a class="navbar-brand" href="<%= farrier_path(current_farrier) %>"><%= current_farrier.first_name %>'s profile</a>
   <a class="navbar-brand" href="/logout">Log Out</a>
 <% else %>
   <a class="navbar-brand" href="<%= new_farrier_path %>">Sign Up</a>
   <a class="navbar-brand" href="/signin">Sign In</a>
 <% end %>
 
-2) /users/new => Sign-Up, posts to /users/:id
-3) /sigin => Log-In, posts to /users/:id
-4) /users/:id => Profile page/List of all horses belonging to the logged in Farrier with links to each horse's name Plus a calendar view by month(?) with all current horses scheduled, also with the ability to click on the horse's name to see that horse's info page.
+2) /farriers/new => Sign-Up, posts to /farriers/:id
+3) /sigin => Log-In, posts to /farriers/:id
+4) /farriers/:id => Profile page/List of all horses belonging to the logged in Farrier with links to each horse's name Plus a calendar view by month(?) with all current horses scheduled, also with the ability to click on the horse's name to see that horse's info page.
+  -Also on this view, links to create a a) NEW HORSE and b) NEW APPOINTMENT
 5) /horses/new => Farrier creates a new horse, entering all available information about that horse
-6) /horses/:id => Displays all information on that horse as entered by the Farrier, as well as a list of all past and upcoming appointments.
+  **-This also includes the ability to add a) HORSE'S OWNER and b) HORSE'S BARN**
+6) /horses/:id => Displays all information on that horse as entered by the Farrier, as well as a) a list of all past and upcoming appointments and b) BARN INFO and c) OWNER INFO
 7) Log-Out => redirects to home
 8) Should this be nested?
   View a farrier's list of horses => users/:id/horses
