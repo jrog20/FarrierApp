@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   root to: 'sessions#home'
-
   get '/signup' => 'farriers#new'
+
+  get '/login' => 'sessions#new'
+
+  # I don't think I need this one:?
+  # post '/login' => 'sessions#create'
+
+  delete '/logout' => 'sessions#destroy'
 
   resources :appointments
   resources :horses
