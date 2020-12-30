@@ -13,7 +13,8 @@ class FarriersController < ApplicationController
   end
 
   def show
-    @farrier = Farrier.find_by_id(session[:farrier_id])
+    @farrier = Farrier.find_by_id(params[:id])
+    redirect_to '/' if !@user
   end
 
   private
