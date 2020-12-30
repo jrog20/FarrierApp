@@ -24,3 +24,9 @@ body {
   background-repeat: repeat-y; /* Do or do not repeat the image */
   background-size: cover;
 }
+
+.flash {
+  color: crimson;
+  font-size: large;
+  font-weight: 600;
+}
