@@ -1,3 +1,13 @@
+Add back to horses#show once Appointments relationships are built: 
+
+# <ul>
+#   Number of Times Shod: <%=# @horse.appointments.length %>
+#     <%# @horse.appointments.each do |appointment| %>
+#     <li><%=# link_to appointment.farrier.company_name, farrier_path(appointment.farrier) %></li>
+#     <li><%=# link_to appointment.start.strftime("%B %d, %Y at %k:%M"), appointment_path(appointment)%></li>
+#   <%# end %>
+# </ul>
+
 User Story:
 
 As a Farrier I want to catalog information on all my clients (horses) and organize my appointments in order to always be prepared with materials and my time.
