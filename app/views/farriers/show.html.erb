@@ -6,9 +6,3 @@
   <li><%= link_to horse.name, horse_path(horse) %></li>
 <% end %>
 
-<p>My Appointments:</p>
-<% @farrier.appointments.each do |appointment| %>
-  <%= link_to appointment.start.strftime("%B %d, %Y at %k:%M"), appointment_path(appointment) %>
-  <%= link_to appointment.horse.name, horse_path(appointment.horse) %>
-  <br>
-<% end %>

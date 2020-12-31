@@ -14,6 +14,14 @@ Add back to appointments#show:
 <%= link_to @appointment.horse.name, horse_path(@appointment.horse) %>
 <%= link_to @appointment.farrier.first_name, farrier_path(@appointment.farrier) %>
 
+Add back to farriers#show:
+<p>My Appointments:</p>
+<% @farrier.appointments.each do |appointment| %>
+  <%= link_to appointment.start.strftime("%B %d, %Y at %k:%M"), appointment_path(appointment) %>
+  <%= link_to appointment.horse.name, horse_path(appointment.horse) %>
+  <br>
+<% end %>
+
 User Story:
 
 As a Farrier I want to catalog information on all my clients (horses) and organize my appointments in order to always be prepared with materials and my time.
