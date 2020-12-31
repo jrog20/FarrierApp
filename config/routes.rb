@@ -8,8 +8,15 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   post '/logout' => 'sessions#destroy'
 
+  resources :farriers do
+    resources :horses, only: [:index]
+  end
+
+  resources :horses do
+    resources :appointments, only: [:index]
+  end
+
   resources :appointments
-  resources :horses
-  resources :farriers
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

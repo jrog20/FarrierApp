@@ -1,7 +1,12 @@
 class AppointmentsController < ApplicationController
   
   def index
-    @appointments = Appointment.all
+    # if it is nested & we can find the horse (prevent nil class error) & set to instance variable
+    if params[:horse_id] && @horse = Horse.find_by_id(params[:horse_id])
+      @appointments = @horse.appointments
+    else
+      @appointments = Appointment.all
+    end
   end
   
   def new
@@ -11,14 +16,21 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = current_farrier.appointments.build(appointment_params)
     if @appointment.save
-      redirect_to '/appointments/show'
-      # redirect_to appointment_path
+      redirect_to appointments_path
     else
       render :new
     end
   end
   
   def show
+    @appointment = Appointment.find_by_id(params[:id])
+  end
+
+  def edit
+    @appointment = Appointment.find_by_id(params[:id])
+  end
+
+  def update
     @appointment = Appointment.find_by_id(params[:id])
   end
 
