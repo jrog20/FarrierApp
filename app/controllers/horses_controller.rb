@@ -6,17 +6,23 @@ class HorsesController < ApplicationController
   end
 
   def create
-    @horse = Horse.create(horse_params)
-    redirect_to @horse
+    @horse = current_farrier.horses.build(horse_params)
+    binding.pry
+
+    if @horse.save
+      redirect_to horse_path
+    else
+      render :new
+    end
   end
 
   def show
-    @horse = Horse.find_by(params[:horse_id])
+    @horse = Horse.find_by_id(params[:id])
   end
 
   private
 
   def horse_params
-    params.require(:horse).permit(:name, :needs_shoes, :front_shoes, :hind_shoes, :winter_shoes, :pads, :shoe_size, :temperament, :schedule, :comments)
+    params.require(:horse).permit(:name, :needs_shoes, :front_shoes, :hind_shoes, :winter_shoes, :pads, :shoe_size, :temperament, :schedule, :comments, :farrier_id)
   end
 end

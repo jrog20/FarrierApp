@@ -10,12 +10,5 @@
   <li>Temperament: <%= @horse.temperament %></li>
   <li>Schedule: <%= @horse.schedule %></li>
   <li>Comments: <%= @horse.comments %></li>
-  </ul>
-
-<ul>
-  Number of Times Shod: <%= @horse.appointments.length %>
-    <% @horse.appointments.each do |appointment| %>
-    <li><%= link_to appointment.farrier.company_name, farrier_path(appointment.farrier) %></li>
-    <li><%= link_to appointment.start.strftime("%B %d, %Y at %k:%M"), appointment_path(appointment)%></li>
-  <% end %>
 </ul>
+
