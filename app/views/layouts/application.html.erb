@@ -13,9 +13,21 @@
 
   <body>
 
-    <a class="navbar-brand" <%= link_to "Home", root_path %></a>
-    <%= link_to "Sign Up", signup_path %>
-    <%= link_to "Log In", login_path %>
+  <div>
+    <%= link_to "Home", root_path %>  |  
+    <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+      <input type=submit value='logout'>
+    <% end %>  |  
+  
+
+    <% if logged_in? %>
+      <%= link_to "Profile", farrier_path(current_farrier) %>  |  
+      <%= link_to "Log Out", logout_path, method: "delete" %>  |  
+    <% else %>
+      <%= link_to "Sign Up", signup_path %>  |  
+      <%= link_to "Log In", login_path %>  |  
+    <% end %>
+  </div>
 
     <%= yield %>
     
