@@ -8,6 +8,12 @@ Add back to horses#show once Appointments relationships are built:
 #   <%# end %>
 # </ul>
 
+Add back to appointments#show:
+
+<%= @appointment.start.to_formatted_s(:long) %>
+<%= link_to @appointment.horse.name, horse_path(@appointment.horse) %>
+<%= link_to @appointment.farrier.first_name, farrier_path(@appointment.farrier) %>
+
 User Story:
 
 As a Farrier I want to catalog information on all my clients (horses) and organize my appointments in order to always be prepared with materials and my time.
@@ -113,7 +119,9 @@ Add to View/Layouts/Application:
   **-This also includes the ability to add a) HORSE'S OWNER and b) HORSE'S BARN**
 6) /horses/:id => Displays all information on that horse as entered by the Farrier, as well as a) a list of all past and upcoming appointments and b) BARN INFO and c) OWNER INFO
 7) Log-Out => redirects to home
-8) Should this be nested?
-  View a farrier's list of horses => users/:id/horses
-  View a specific horse belonging to a farrier => users/:id/horses/:id
-9) /users/:id/appointments => View all of that farrier's appointments, both past and upcoming
+
+8) NESTED ROUTES: INDEX
+  a) farriers/:id/horses => View a farrier's list of horses
+  b) farriers/:id/appointments => View all of that farrier's appointments, both past and upcoming
+  c) horses/:id/appointments => View that horse's appointments
+
