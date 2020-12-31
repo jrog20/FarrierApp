@@ -1,1 +1,16 @@
 <h1>All Appointments Index Page</h1>
+
+<ul>
+<% @appointments.each do |appointment| %>
+  <p>
+
+    <li>
+    Horse Name: <%= appointment.horse.name if appointment.horse.name %> <br>
+    Start time: <br>
+    End time: <br>
+    Comments: <%= appointment.comments %>
+    </li>
+  
+  </p>
+<% end %>
+</ul>

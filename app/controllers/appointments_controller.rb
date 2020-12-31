@@ -15,6 +15,8 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = current_farrier.appointments.build(appointment_params)
+    #hardcoding horse Id to get to next step for now...
+    @appointment.horse_id = 1
     if @appointment.save
       redirect_to appointments_path
     else
