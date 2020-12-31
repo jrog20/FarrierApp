@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
       redirect_to '/' if !logged_in?
     end
 
+    def current_horse
+      @current_horse ||= Horse.find_by_id(params[:horse_id])
+    end
+
 end

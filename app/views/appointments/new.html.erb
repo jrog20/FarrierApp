@@ -1,0 +1,17 @@
+<h1>Create a New Appointment</h1>
+
+# CREATE A DROPDOWN LIST OF ALL THIS FARRIER'S HORSES
+<br><br>
+
+<%= form_for @appointment do |f| %>
+  <%= f.label :start %>
+  <%= f.text_field :start %>
+  <br><br>
+  <%= f.label :end %>
+  <%= f.text_field :end %>
+  <br><br>
+  <%= f.label :comments %>
+  <%= f.text_area :comments %>
+  <br><br>
+  <%= f.submit %>
+<% end %>

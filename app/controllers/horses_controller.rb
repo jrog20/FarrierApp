@@ -11,8 +11,6 @@ class HorsesController < ApplicationController
 
   def create
     @horse = current_farrier.horses.build(horse_params)
-    binding.pry
-
     if @horse.save
       redirect_to horse_path
     else
