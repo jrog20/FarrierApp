@@ -17,7 +17,10 @@
       <%= link_to "Home", root_path %>  |  
 
       <% if logged_in? %>
-        <%= link_to "Profile", farrier_path(current_farrier) %>  |  
+        <%= link_to "My Profile", farrier_path(current_farrier) %>  |  
+        <%= link_to "Add a Horse", new_horse_path %>  |  
+        <%= link_to "All Horses", horses_path %>  |  
+        <%= link_to "Add an Appointment", new_appointment_path %>  |  
         <%= link_to "Log Out", logout_path, method: "delete" %>  |  
       <% else %>
         <%= link_to "Sign Up", signup_path %>  |  
