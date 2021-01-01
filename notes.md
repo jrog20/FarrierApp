@@ -59,8 +59,6 @@ t.integer :farrier_id
 *t.integer :owner_id*
 *t.integer :barn_id*
 
-*t.date :next_appointment => want to be able to schedule and view this...but is this done through appointments? How to do this?*
-
 APPOINTMENT - Join Table
 belongs_to :farrier
 belongs_to :horse
@@ -68,6 +66,7 @@ belongs_to :horse
 *Add on* belongs_to :owner => I DON'T THINK I NEED THIS
 t.datetime :start
 t.datetime :end
+ADD FIELD => t.date :date
 t.text :comments (a place for the Farrier to put notes about this specific appointment)
 t.integer :farrier_id
 t.integer :horse_id
