@@ -4,8 +4,10 @@ class AppointmentsController < ApplicationController
     # if it is nested & we can find the horse (prevent nil class error) & set to instance variable
     if params[:horse_id] && @horse = Horse.find_by_id(params[:horse_id])
       @appointments = @horse.appointments
+    elsif params[:farrier_id] && @farrier = Farrier.find_by_id(params[:farrier_id])
+      @appointments = @farrier.appointments
     else
-      flash[:message] = "That horse doesn't exist" if params[:horse_id]
+      @error = flash[:message] = "That horse doesn't exist" if params[:horse_id]
       @appointments = Appointment.all
     end
   end

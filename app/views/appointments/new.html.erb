@@ -1,7 +1,7 @@
 <h1>Create a New Appointment</h1>
 
 <%= form_for @appointment do |f| %>
-  <%= f.collection_select :horse_id, Horse.order(:name),:id,:name %>
+  <%= f.collection_select :horse_id, Horse.order(:name), :id, :name %>
   <br><br>
   <%= f.label :start %>
   <%= f.text_field :start %>
