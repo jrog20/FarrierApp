@@ -1,16 +1,15 @@
-<h1>All Appointments Index Page</h1>
+<h1>All Appointments</h1>
 
 <ul>
 <% @appointments.each do |appointment| %>
   <p>
-
     <li>
-    Horse Name: <%= appointment.horse.name if appointment.horse.name %><br>
-    Start time: <%= appointment.start.strftime("%B %d, %Y at %k:%M") if appointment.start %><br>
-    End time: <%= appointment.end.strftime("%B %d, %Y at %k:%M") if appointment.end %><br>
+    Horse: <%= appointment.horse.name if appointment.horse.name %><br>
+    Date: <%= appointment.date.strftime("%m/%d/%Y") if appointment.date %><br>
+    Start time: <%= appointment.start.strftime("%I:%M %p") if appointment.start %><br>
+    End time: <%= appointment.end.strftime("%I:%M %p") if appointment.end %><br>
     Comments: <%= appointment.comments %>
     </li>
-  
   </p>
 <% end %>
 </ul>

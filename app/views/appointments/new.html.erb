@@ -11,12 +11,16 @@
     <h2>For <%= @horse.name %></h2><br>
   <% end %>
 
+  <%= f.label :date %>
+  <%= date_select("appointment", "date", prompt: {day: 'Select day', month: 'Select month', year: 'Select year'}) %>
+  <br><br>
+
   <%= f.label :start %>
-  <%= datetime_select("appointment", "start", prompt: true) %>
+  <%= time_select("appointment", "start", prompt: {hour: 'Choose hour', minute: 'Choose minute', ampm: true}) %>
   <br><br>
 
   <%= f.label :end %>
-  <%= datetime_select("appointment", "end", prompt: true) %>
+  <%= time_select("appointment", "end", {prompt: true, ampm: true}) %>
   <br><br>
 
   <%= f.label :comments %>
