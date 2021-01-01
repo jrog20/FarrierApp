@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :farriers do
     resources :horses, only: [:index]
+    resources :appointments, only: [:index]
   end
 
   resources :horses do
@@ -17,6 +18,5 @@ Rails.application.routes.draw do
   end
 
   resources :appointments
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
