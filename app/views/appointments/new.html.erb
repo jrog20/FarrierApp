@@ -1,14 +1,18 @@
 <h1>Create a New Appointment</h1>
 
 <%= form_for @appointment do |f| %>
+  Select horse:
   <%= f.collection_select :horse_id, Horse.order(:name), :id, :name %>
   <br><br>
+
   <%= f.label :start %>
-  <%= f.text_field :start %>
+  <%= datetime_select("appointment", "start", prompt: true) %>
   <br><br>
+
   <%= f.label :end %>
-  <%= f.text_field :end %>
+  <%= datetime_select("appointment", "end", prompt: true) %>
   <br><br>
+
   <%= f.label :comments %>
   <%= f.text_area :comments %>
   <br><br>
