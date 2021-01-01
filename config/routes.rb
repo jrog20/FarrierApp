@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :horses do
-    resources :appointments, only: [:index]
+    resources :appointments, only: [:index, :new]
   end
 
   resources :appointments

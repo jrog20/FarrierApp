@@ -12,3 +12,6 @@
   <li>Comments: <%= @horse.comments %></li>
 </ul>
 
+<h3><%= link_to "List of Appointments", horse_appointments_path(@horse) %></h3>
+<h3><%= link_to "Schedule a New Appointment", new_horse_appointment_path(@horse) %></h3>
+
