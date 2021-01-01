@@ -1,9 +1,8 @@
 <h1>Create a New Appointment</h1>
 
-# CREATE A DROPDOWN LIST OF ALL THIS FARRIER'S HORSES
-<br><br>
-
 <%= form_for @appointment do |f| %>
+  <%= f.collection_select :horse_id, Horse.order(:name),:id,:name %>
+  <br><br>
   <%= f.label :start %>
   <%= f.text_field :start %>
   <br><br>

@@ -5,6 +5,7 @@ class AppointmentsController < ApplicationController
     if params[:horse_id] && @horse = Horse.find_by_id(params[:horse_id])
       @appointments = @horse.appointments
     else
+      flash[:message] = "That horse doesn't exist" if params[:horse_id]
       @appointments = Appointment.all
     end
   end
@@ -15,8 +16,7 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = current_farrier.appointments.build(appointment_params)
-    #hardcoding horse Id to get to next step for now...
-    @appointment.horse_id = 1
+    @horses = Horse.all.name
     if @appointment.save
       redirect_to appointments_path
     else
