@@ -4,7 +4,10 @@
     <li>
       Name: <%= link_to horse.name, horse_path(horse) %> <br>
       Last Appointment: Do we want to see this here? <br>
-      Next Appointment: <%= horse.appointments.last %><br><br>
+      Next Appointment: <%= horse.appointments.last %> <br>
+      <strong>---For testing only---
+      Farrier Name: <%= horse.farrier.first_name %></strong>
+      <br><br>
     </li>
   <% end %>
 </ul>
