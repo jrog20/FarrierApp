@@ -18,4 +18,18 @@ class SessionsController < ApplicationController
     session.clear
     redirect_to root_path
   end
+
+  def omniauth
+    @farrier = Farrier.from_omniauth(auth)
+    @farrier.save
+    session[:farrier_id] = @farrier.id
+    redirect_to farrier_path(@farrier)
+  end
+
+  private
+
+  def auth
+    request.env['omniauth.auth']
+  end
+
 end

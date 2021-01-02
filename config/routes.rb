@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   post '/logout' => 'sessions#destroy'
 
+  get '/auth/:provider/callback' => 'sessions#omniauth' 
+
   resources :farriers do
     resources :horses, only: [:index, :new, :create]
     resources :appointments, only: [:index, :new, :create]
