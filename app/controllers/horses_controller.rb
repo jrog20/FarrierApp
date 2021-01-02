@@ -2,7 +2,12 @@ class HorsesController < ApplicationController
   before_action :redirect_if_not_logged_in
   
   def index
-    @horses = Horse.all
+    if params[:farrier_id] && @farrier = Farrier.find_by_id(params[:farrier_id])
+      @horses = @farrier.horses
+    else
+      @error = flash[:message] = "That farrier doesn't exist" if params[:farrier_id]
+      @horses = Horse.all
+    end
   end
 
   def new

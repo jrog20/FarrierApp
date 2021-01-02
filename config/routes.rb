@@ -9,12 +9,12 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
 
   resources :farriers do
-    resources :horses, only: [:index]
-    resources :appointments, only: [:index]
+    resources :horses, only: [:index, :new, :create]
+    resources :appointments, only: [:index, :new, :create]
   end
 
   resources :horses do
-    resources :appointments, only: [:index, :new]
+    resources :appointments, only: [:index, :new, :create]
   end
 
   resources :appointments
