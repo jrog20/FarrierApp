@@ -17,7 +17,7 @@ class HorsesController < ApplicationController
   def create
     @horse = current_farrier.horses.build(horse_params)
     if @horse.save
-      redirect_to horse_path
+      redirect_to horse_path(@horse)
     else
       render :new
     end
