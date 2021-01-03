@@ -16,7 +16,7 @@
   <br><br>
 
   <%= f.label :start %>
-  <%= time_select("appointment", "start", prompt: {hour: 'Choose hour', minute: 'Choose minute', ampm: true}) %>
+  <%= time_select("appointment", "start", {prompt: true, ampm: true}) %>
   <br><br>
 
   <%= f.label :end %>
