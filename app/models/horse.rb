@@ -3,4 +3,6 @@ class Horse < ApplicationRecord
   has_many :appointments
   belongs_to :owner
   belongs_to :barn
+
+  scope :alpha, -> { order(:name) }
 end

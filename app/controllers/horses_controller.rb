@@ -3,10 +3,9 @@ class HorsesController < ApplicationController
   
   def index
     if params[:farrier_id] && @farrier = Farrier.find_by_id(params[:farrier_id])
-      @horses = @farrier.horses
+      @horses = @farrier.horses.alpha
     else
-      @error = flash[:message] = "That farrier doesn't exist" if params[:farrier_id]
-      @horses = Horse.all
+      redirect_to root_path
     end
   end
 
