@@ -1,3 +1,9 @@
-<h1>Appointment Show Page</h1>
+<h1>Appointment Created</h1>
 
-<%= @appointment.comments %>
+<p>
+  Horse: <%= link_to @appointment.horse.name, horse_path(@appointment.horse) if @appointment.horse.name %><br>
+  Date: <%= @appointment.date.strftime("%m/%d/%Y") if @appointment.date %><br>
+  Start time: <%= @appointment.start.strftime("%I:%M %p") if @appointment.start %><br>
+  End time: <%= @appointment.end.strftime("%I:%M %p") if @appointment.end %><br>
+  Comments: <%= @appointment.comments %>
+</p>
