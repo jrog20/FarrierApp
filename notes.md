@@ -39,7 +39,7 @@ APPOINTMENT - Join Table
 belongs_to :farrier
 belongs_to :horse
 *Add on* belongs_to :barn
-*Add on* belongs_to :owner => I DON'T THINK I NEED THIS
+*Add on* belongs_to :owner
 t.datetime :start
 t.datetime :end
 ADD FIELD => t.date :date

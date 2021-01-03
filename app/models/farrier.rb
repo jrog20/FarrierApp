@@ -2,6 +2,8 @@ class Farrier < ApplicationRecord
   has_secure_password
   has_many :appointments
   has_many :horses
+  has_many :owners, through: :horses
+  has_many :barns, through: :horses
 
   validates :email, :username, :password, presence: true
 
