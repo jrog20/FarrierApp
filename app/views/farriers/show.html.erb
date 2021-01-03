@@ -1,8 +1,14 @@
 <h2>Welcome <%= @farrier.first_name %> <%= @farrier.last_name %>!</h2>
-<h3><%= @farrier.company_name %>
+<h3><%= @farrier.company_name %></h3>
  
-<p>My Horses:</p>
 <% @farrier.horses.each do |horse| %>
-  <li><%= link_to horse.name, horse_path(horse) %></li>
+  <%= link_to horse.name, horse_path(horse) %><br>
+    <% horse.appointments.each do |appointment| %>
+      <p>
+      Date: <%= appointment.date.strftime("%m/%d/%Y") if appointment.date %><br>
+      Start time: <%= appointment.start.strftime("%I:%M %p") if appointment.start %><br>
+      End time: <%= appointment.end.strftime("%I:%M %p") if appointment.end %><br>
+      Comments: <%= appointment.comments if appointment.comments %>
+      </p>
+    <% end %>
 <% end %>
-
