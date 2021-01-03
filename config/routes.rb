@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :barns
-  resources :owners
+  
   root to: 'sessions#home'
   get '/signup' => 'farriers#new'
 
@@ -22,5 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :appointments
+  resources :barns
+  resources :owners
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
