@@ -1,27 +1,3 @@
-Add back to horses#show once Appointments relationships are built: 
-
-# <ul>
-#   Number of Times Shod: <%=# @horse.appointments.length %>
-#     <%# @horse.appointments.each do |appointment| %>
-#     <li><%=# link_to appointment.farrier.company_name, farrier_path(appointment.farrier) %></li>
-#     <li><%=# link_to appointment.start.strftime("%B %d, %Y at %k:%M"), appointment_path(appointment)%></li>
-#   <%# end %>
-# </ul>
-
-Add back to appointments#show:
-
-<%= @appointment.start.to_formatted_s(:long) %>
-<%= link_to @appointment.horse.name, horse_path(@appointment.horse) %>
-<%= link_to @appointment.farrier.first_name, farrier_path(@appointment.farrier) %>
-
-Add back to farriers#show:
-<p>My Appointments:</p>
-<% @farrier.appointments.each do |appointment| %>
-  <%= link_to appointment.start.strftime("%B %d, %Y at %k:%M"), appointment_path(appointment) %>
-  <%= link_to appointment.horse.name, horse_path(appointment.horse) %>
-  <br>
-<% end %>
-
 User Story:
 
 As a Farrier I want to catalog information on all my clients (horses) and organize my appointments in order to always be prepared with materials and my time.
@@ -41,7 +17,7 @@ t.string :password_digest
 t.string :company_name
 
 HORSE
-has_many :farriers, through: :appointments
+belongs_to :farrier
 has_many :appointments
 *Add on* belongs_to :owner
 *Add on* belongs_to :barn
@@ -109,15 +85,6 @@ Views:
   b) Top Nav Bar when user logged in:
     Home, Farrier's Profile page, Log Out
 
-Add to View/Layouts/Application:
-<% if current_farrier %>
-  <a class="navbar-brand" href="<%= farrier_path(current_farrier) %>"><%= current_farrier.first_name %>'s profile</a>
-  <a class="navbar-brand" href="/logout">Log Out</a>
-<% else %>
-  <a class="navbar-brand" href="<%= new_farrier_path %>">Sign Up</a>
-  <a class="navbar-brand" href="/login">Log In</a>
-<% end %>
-
 2) /farriers/new => Sign-Up, posts to /farriers/:id
 3) /sigin => Log-In, posts to /farriers/:id
 4) /farriers/:id => Profile page/List of all horses belonging to the logged in Farrier with links to each horse's name Plus a calendar view by month(?) with all current horses scheduled, also with the ability to click on the horse's name to see that horse's info page.
@@ -129,6 +96,6 @@ Add to View/Layouts/Application:
 
 8) NESTED ROUTES: INDEX
   a) farriers/:id/horses => View a farrier's list of horses
-  b) farriers/:id/appointments => View all of that farrier's appointments, both past and upcoming
-  c) horses/:id/appointments => View that horse's appointments
+  b) horses/:id/appointments => View that horse's appointments
+  c) farriers/:id/appointments => View all of that farrier's appointments, both past and upcoming
 
