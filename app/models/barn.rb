@@ -1,0 +1,2 @@
+class Barn < ApplicationRecord
+end

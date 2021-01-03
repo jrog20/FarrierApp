@@ -60,6 +60,7 @@ t.string :first_name
 t.string :last_name
 t.string :phone
 t.string :email
+t.text :comments
 
 *Add On #2*
 
@@ -76,6 +77,7 @@ t.string :address
 t.string :city
 t.string :state
 t.string :zip_code
+t.text :comments
 
 Views:
 

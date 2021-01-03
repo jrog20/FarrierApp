@@ -1,0 +1,2 @@
+class BarnsController < ApplicationController
+end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :barns
   resources :owners
   root to: 'sessions#home'
   get '/signup' => 'farriers#new'
