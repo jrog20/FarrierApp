@@ -25,7 +25,7 @@ class AppointmentsController < ApplicationController
     @appointment = current_farrier.appointments.build(appointment_params)
     @horses = Horse.all.name
     if @appointment.save
-      redirect_to appointments_path
+      redirect_to appointment_path(@appointment)
     else
       render :new
     end
