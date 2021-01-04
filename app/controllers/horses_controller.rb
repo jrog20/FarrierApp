@@ -13,6 +13,7 @@ class HorsesController < ApplicationController
     @horse = Horse.new
   end
 
+  #need to connect horses, barns, and owners at creation
   def create
     @horse = current_farrier.horses.build(horse_params)
     if @horse.save
