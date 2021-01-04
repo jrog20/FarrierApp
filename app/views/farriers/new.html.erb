@@ -1,5 +1,7 @@
 <h1>Sign Up</h1>
 
+<%= render partial: "layouts/errors", locals: {object: @farrier} %>
+
 <%= form_for @farrier do |f| %>
   <%= f.label :company_name %>
   <%= f.text_field :company_name %>

@@ -1,5 +1,7 @@
 <h1>Add a New Horse</h1>
 
+<%= render partial: "layouts/errors", locals: {object: @horse} %>
+
 <%= form_for @horse do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>

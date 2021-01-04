@@ -1,5 +1,7 @@
 <h1>Create a New Appointment</h1>
 
+<%= render partial: "layouts/errors", locals: {object: @appointment} %>
+
 <%= form_for @appointment do |f| %>
 
   <% if !@horse %>
