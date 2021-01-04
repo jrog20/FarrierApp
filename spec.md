@@ -29,15 +29,31 @@ Specs:
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 
 *OPTIONS*
+=> Return things in order: 
+  - Horse's appointments in order
+  - Complete list of a farrier's upcoming appointments, in order by...
+    - Barn?, Date?
+
 => Horse.oldest_client URL: /horses/oldest_client
+
 => Horse.most_appointments URL: /horses/most_appointments
+
+# First, scope method can only view attributes for that model, so must join w/other migration that you want to include attributes:
+Horse.joins(:appointments) 
+
+# Second, must group the items by the id attribute if you want anything other than a count of everything
+Horse.joins(:appointments).group(:id) => groups each Horse's appointments together
+
+# Finally, order them by the Horse w/the most appointments
+Horse.joins(:appointments).group(:id).order('count(horses.id) desc')
+
 
 - [x] Include signup
 
 - [x] Include login
 
 - [x] Include logout
-
+ 
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
 => OmniAuth
 
