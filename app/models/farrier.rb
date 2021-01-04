@@ -5,7 +5,7 @@ class Farrier < ApplicationRecord
   has_many :owners, through: :horses
   has_many :barns, through: :horses
 
-  validates :email, :username, :password, presence: true
+  validates :username, :password, presence: true
 
 def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_initialize do |farrier|
