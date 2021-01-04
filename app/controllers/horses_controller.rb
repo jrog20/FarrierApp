@@ -26,6 +26,14 @@ class HorsesController < ApplicationController
     @horse = Horse.find_by_id(params[:id])
   end
 
+  def edit
+    @horse = Horse.find_by_id(params[:id])
+  end
+
+  def update
+    @horse = Horse.find_by_id(params[:id])
+  end
+
   private
 
   def horse_params
