@@ -5,11 +5,7 @@ class OwnersController < ApplicationController
 
   #need to connect horses, barns, and owners at creation
   def create
-    if @owner = Owner.create(owner_params)
-      redirect_to owner_path(@owner)
-    else
-      render :new
-    end
+    @owner = Owner.create(owner_params)
   end
 
   def show
