@@ -33,10 +33,15 @@
   <%= f.label :comments %>
   <%= f.text_area :comments %>
   <br><br>
+
+  # Add -or select- a Barn
+
+  <h2>Select or Create a Barn</h2>
+  <%= f.collection_select :barn_id, Barn.all, :id, :name, :prompt => true %>
+  
+  <br><br>
   <%= f.submit %>
 <% end %>
-
-# Add -or select- a Barn
 
 
 # Add -or select- an Owner
