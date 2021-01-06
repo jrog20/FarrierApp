@@ -11,6 +11,17 @@
   <li>Schedule: <%= @horse.schedule %></li>
   <li>Comments: <%= @horse.comments %></li>
 </ul>
+<br><br>
+
+<h1><%= @horse.barn.name %></h1>
+  Barn Manager: <%= @horse.barn.manager_name %><br>
+  Phone: <%= @horse.barn.phone %><br>
+  Email: <%= @horse.barn.email %><br>
+  Address: <%= @horse.barn.address %><br>
+  City: <%= @horse.barn.city %>, <%= @horse.barn.state %> <%= @horse.barn.zip_code %><br>
+  Comments: <%= @horse.barn.comments %><br>
+
+<br><br>
 
 <h3><%= link_to "List of Appointments", horse_appointments_path(@horse) %></h3>
 <h3><%= link_to "Schedule a New Appointment", new_horse_appointment_path(@horse) %></h3>
