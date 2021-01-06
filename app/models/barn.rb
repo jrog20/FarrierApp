@@ -4,5 +4,5 @@ class Barn < ApplicationRecord
   has_many :owners, through: :horses
   has_many :appointments, through: :horses
 
-  validates :name, presence: true
+  # validates :name, presence: true
 end

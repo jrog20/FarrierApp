@@ -1,4 +1,4 @@
-<h1>Add a New Barn</h1>
+<h1>Add a New Owner</h1>
 <%= form_for @owner do |f| %>
   <%= f.label :first_name %>
   <%= f.text_field :first_name %>
@@ -7,7 +7,7 @@
   <%= f.text_field :last_name %>
   <br><br>
   <%= f.label :phone %>
-  <%= f.email_field :phone %>
+  <%= f.text_field :phone %>
   <br><br>
   <%= f.label :email %>
   <%= f.email_field :email %>
