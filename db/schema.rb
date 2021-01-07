@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_03_221315) do
+ActiveRecord::Schema.define(version: 2021_01_07_184137) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "start"
@@ -72,8 +72,7 @@ ActiveRecord::Schema.define(version: 2021_01_03_221315) do
   end
 
   create_table "owners", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.string "phone"
     t.string "email"
     t.text "comments"
