@@ -13,13 +13,8 @@ class HorsesController < ApplicationController
     @horse = Horse.new
   end
 
-  #need to connect horses, barns, and owners at creation
   def create
     @horse = current_farrier.horses.build(horse_params)
-    @barn = Barn.find_or_create_by!(id: params[:barn_id])
-    @owner = Owner.find_or_create_by!(id: params[:owner_id])
-    @horse.barn = @barn
-    @horse.owner = @owner
     if @horse.save
       redirect_to horse_path(@horse)
     else
@@ -29,6 +24,7 @@ class HorsesController < ApplicationController
 
   def show
     @horse = Horse.find_by_id(params[:id])
+    @barn = Barn.find_by_id(params[:id])
   end
 
   def edit
@@ -42,6 +38,6 @@ class HorsesController < ApplicationController
   private
 
   def horse_params
-    params.require(:horse).permit(:name, :needs_shoes, :front_shoes, :hind_shoes, :winter_shoes, :pads, :shoe_size, :temperament, :schedule, :comments, :farrier_id, :barn_id, :owner_id)
+    params.require(:horse).permit(:name, :needs_shoes, :front_shoes, :hind_shoes, :winter_shoes, :pads, :shoe_size, :temperament, :schedule, :comments, :farrier_id, :barn_id, :owner_id, :barn_name, :owner_name)
   end
 end
