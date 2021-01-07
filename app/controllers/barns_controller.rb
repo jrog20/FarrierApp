@@ -3,9 +3,9 @@ class BarnsController < ApplicationController
     @barn = Barn.new
   end
 
-  #need to connect horses, barns, and owners at creation
   def create
-    @barn = Barn.create(barn_params)
+    @barn = Barn.find_or_create(barn_params)
+    @barn = @horse.build(barn_params)
   end
 
   def show
