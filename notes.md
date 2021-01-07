@@ -1,3 +1,51 @@
+TO DO:
+
+[ ] Understand how (partial form?) to create a barn and owner at the same time as creating a horse.
+
+<%= f.collection_select :barn_id, Barn.all, :id, :name, :prompt => true %>
+
+-or
+
+<%= form_for @horse do |f| %>
+  <%= f.text_field :barn_name, list: "barns_autocomplete" %>
+  <datalist id="barns_autocomplete">
+    <% Barn.all.each do |barn| %>
+      <option value="<%= barn.name %>">
+    <% end %>
+  </datalist>
+  <textarea name="horse[comments]"></textarea>
+  <%= f.submit %>
+<% end %>
+
+[ ] Fix all validations in views!
+[ ] Horse: add validation - a horse must have a barn -AND- owner when created…Can’t save the horse otherwise!
+[ ] Create helper methods: Take logic out of views. Only talks to views (does not touch db)
+
+[ ] Add ability to edit and delete a horse.
+
+def edit
+    @artist = Artist.find(params[:id])
+  end
+
+  def update
+    @artist = Artist.find(params[:id])
+
+    @artist.update(artist_params)
+
+    if @artist.save
+      redirect_to @artist
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @artist = Artist.find(params[:id])
+    @artist.destroy
+    flash[:notice] = "Artist deleted."
+    redirect_to artists_path
+  end
+
 User Story:
 
 As a Farrier I want to catalog information on all my clients (horses) and organize my appointments in order to always be prepared with materials and my time.
