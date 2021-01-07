@@ -1,4 +1,4 @@
-<h1>Add a New Horse</h1>
+<h1>1) Add a New Horse</h1>
 
 # Add _errors partial back in here
 
@@ -34,17 +34,36 @@
   <%= f.text_area :comments %>
   <br><br>
 
-  # Add -or select- a Barn
-
-  <h2>Select or Create a Barn</h2>
-  <%= f.collection_select :barn_id, Barn.all, :id, :name, :prompt => true %>
+  <h1>2) Select or Create a Barn</h1>
   
+  <h3>Select from an existing Barn:</h3>
+    <%= f.text_field :barn_name, list: "barns_autocomplete" %>
+    <datalist id="barns_autocomplete">
+      <% Barn.all.each do |barn| %>
+        <option value="<%= barn.name %>">
+      <% end %>
+    </datalist>
+
+  <h3>Or Create a New Barn:</h3>
+  
+  <h1>3) Select or Create an Owner</h1>
+  <br><br>
+  
+  <h2>Select from an existing Owner:</h2>
+    <%= f.text_field :owner_name, list: "owners_autocomplete" %>
+    <datalist id="owners_autocomplete">
+      <% Owner.all.each do |owner| %>
+        <option value="<%= owner.name %>">
+      <% end %>
+    </datalist>
+
   <br><br>
   <%= f.submit %>
 <% end %>
 
+<br><br>
 
-# Add -or select- an Owner
 
 
 # Add validations on this page for both Barn and Owner = Required.
+<br><br>
