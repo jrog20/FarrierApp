@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 2021_01_07_184137) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "date"
-    t.integer "barn_id"
-    t.integer "owner_id"
     t.index ["farrier_id"], name: "index_appointments_on_farrier_id"
     t.index ["horse_id"], name: "index_appointments_on_horse_id"
   end
