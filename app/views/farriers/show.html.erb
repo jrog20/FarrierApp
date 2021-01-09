@@ -15,9 +15,6 @@
       End time: <%= appointment.end.strftime("%I:%M %p") if appointment.end %><br>
       Comments: <%= appointment.comments if appointment.comments %>
       </p>
-    <% else %>
-      <p>Congratulations! You have no scheduled appointments today.</p>
-      <% break %>
     <% end %>
   <% end %>
 <% end %>
