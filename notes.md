@@ -1,5 +1,19 @@
 TO DO:
 
+Add back to _errors.html.erb
+
+<% if object.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(object.errors.count, "error") %> prohibited this from being saved:</h2>
+
+    <ul>
+      <% object.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 [ ] Understand how (partial form?) to create a barn and owner at the same time as creating a horse.
 
 <%= f.collection_select :barn_id, Barn.all, :id, :name, :prompt => true %>
