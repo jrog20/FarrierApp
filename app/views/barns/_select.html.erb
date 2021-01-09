@@ -1,0 +1,4 @@
+<%= form_with model: barn do |f| %>
+  <h3>Select from an existing Barn:</h3>
+  <%= f.collection_select :id, Barn.order(:name), :id, :name %>
+<% end %>
