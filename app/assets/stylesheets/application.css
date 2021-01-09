@@ -64,9 +64,28 @@ ul.topnav li {
   color: white;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  text-decoration: center;
 }
 
 @media screen and (max-width: 600px) {
   ul.topnav li {float: none;}
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #b0dcec;
+  color: white;
+  text-align: center;
+}
+
+.footer p {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: center;
 }
