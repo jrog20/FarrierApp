@@ -17,16 +17,35 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
+  padding-left: 70px;
+  padding-right: 70px;
   background-image: url("white_boards.jpg"); /* The image used */
   background-color: rgb(253, 252, 252); /* Used if the image is unavailable */
-  height: 800px; /* You must set a specified height */
+  height: 1100px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: repeat-y; /* Do or do not repeat the image */
   background-size: cover;
+}
+
+header {
+  background-color: #b0dcec;
+  border: 2px solid black;
+  height: 80px;
+  width: 100%;
+  flex-shrink: 0
 }
 
 .flash {
   color: crimson;
   font-size: large;
   font-weight: 600;
+}
+
+li {
+  float: left;
+  display: block;
+  padding: 12px;
+  font-size: large;
+  background-color: #e8e8e8;
+  border: 1px solid black;
 }
