@@ -10,10 +10,20 @@ class HorsesController < ApplicationController
   end
 
   def new
-    @horse = Horse.new
+    if params[:farrier_id] && @farrier = Farrier.find_by_id(params[:farrier_id])
+      @horse = @farrier.horses.build
+    else
+      @horse = Horse.new
+    end
+    @horse.build_barn
+    @horse.build_owner
   end
 
   def create
+    binding.pry
+    @barn = Barn.find_or_create_by(params[:barn_name])
+    # params[:horse][:barn][:name] = "Testie's Barn"
+
     @horse = current_farrier.horses.build(horse_params)
     if @horse.save
       redirect_to horse_path(@horse)
@@ -24,7 +34,6 @@ class HorsesController < ApplicationController
 
   def show
     @horse = Horse.find_by_id(params[:id])
-    @barn = Barn.find_by_id(params[:id])
   end
 
   def edit

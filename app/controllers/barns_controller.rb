@@ -4,8 +4,7 @@ class BarnsController < ApplicationController
   end
 
   def create
-    @barn = Barn.find_or_create(barn_params)
-    @barn = @horse.build(barn_params)
+    @barn = Barn.find_or_create_by(barn_params)
   end
 
   def show

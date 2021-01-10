@@ -3,9 +3,8 @@ class OwnersController < ApplicationController
     @owner = Owner.new
   end
 
-  #need to connect horses, barns, and owners at creation
   def create
-    @owner = Owner.create(owner_params)
+    @owner = Owner.find_or_create_by(owner_params)
   end
 
   def show

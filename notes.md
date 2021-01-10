@@ -17,6 +17,8 @@ Add back to _errors.html.erb
 [ ] Understand how (partial form?) to create a barn and owner at the same time as creating a horse.
 
 <%= f.collection_select :barn_id, Barn.all, :id, :name, :prompt => true %>
+  
+<%= render partial: "barns/form", locals: {barn: @barn} %>
 
 -or
 
@@ -36,6 +38,7 @@ Add back to _errors.html.erb
 [ ] Create helper methods: Take logic out of views. Only talks to views (does not touch db)
 
 [ ] Add ability to edit and delete a horse.
+[ ] Add edit and delete links/buttons to horses/:id (show) page.
 
 def edit
     @artist = Artist.find(params[:id])
