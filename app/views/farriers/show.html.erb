@@ -1,7 +1,7 @@
 <h2>Welcome <%= @farrier.first_name %> <%= @farrier.last_name %>!</h2>
 <h3><%= @farrier.company_name %></h3>
 
-<strong><em>Today's Inspirational Quote: https://www.americanfarriers.com/articles/5162-motivational-monday</strong></em>
+<strong><em>Inspirational Quote: <%= Quotable.random %></strong></em>
  
 <h2>Today's Appointments:</h2>
 
@@ -17,4 +17,8 @@
       </p>
     <% end %>
   <% end %>
+<% end %>
+
+<%= month_calendar do |date| %>
+  <%= date %>
 <% end %>

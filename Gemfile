@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
+gem 'quotable', '~> 0.0.2'
+gem "simple_calendar", "~> 2.0"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
