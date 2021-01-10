@@ -8,6 +8,14 @@ class Horse < ApplicationRecord
 
   scope :alpha, -> { order(:name) }
 
+  def barn_attributes=(attr)
+    self.barn = Barn.find_or_create_by(attr) if !attr[:name].blank?
+  end
+
+  def owner_attributes=(attr)
+    self.owner = Owner.find_or_create_by(attr) if !attr[:name].blank?
+  end
+
   def barn_name=(name)
     self.barn = Barn.find_or_create_by(name: name)
   end
