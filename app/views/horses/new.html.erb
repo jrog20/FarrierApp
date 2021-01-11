@@ -1,7 +1,8 @@
+<%= render partial: "layouts/errors", locals: {object: @horse} %>
+
 <div class="row">
   <div class="column">
     <h2>1) Add a New Horse</h2>
-    # Add _errors partial back in here
     <p><%= form_for @horse do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
