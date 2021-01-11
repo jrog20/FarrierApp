@@ -38,7 +38,14 @@
     </div>
     </header>
     <div class="flash"><%= @error %></div>
+
     <%= yield %>
 
+    <div class="footer">
+      <% if logged_in? %>
+        <%= current_farrier.first_name %> <%= current_farrier.last_name %> of 
+        <%= current_farrier.company_name %>
+      <% end %>
+    </div>
   </body>
 </html>

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ 
  /* *= require simple_calendar */
 
 body {
@@ -74,20 +75,20 @@ ul.topnav li {
 
 .footer {
   position: fixed;
-  left: 0;
+  left: 10;
   bottom: 0;
-  width: 100%;
+  width: 90%;
   background-color: #b0dcec;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 
 .footer p {
-  float: left;
+  float: center;
   display: block;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
-  padding: 14px 16px;
+  padding: 1px 1px;
   text-decoration: center;
 }
 
@@ -100,7 +101,7 @@ ul.topnav li {
   float: left;
   width: 33.33%;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  /* height: 300px; Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
