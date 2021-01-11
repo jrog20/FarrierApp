@@ -1,0 +1,30 @@
+<%= render partial: "layouts/errors", locals: {object: @appointment} %>
+
+<%= form_for @appointment do |f| %>
+
+  <% if !@horse %>
+    <%= f.label :horse %>
+    <%= f.collection_select :horse_id, Horse.order(:name), :id, :name %>
+    <br><br>
+  <% else %>
+    <%= f.hidden_field :horse_id %>
+    <h2>For <%= @horse.name %></h2><br>
+  <% end %>
+
+  <%= f.label :date %>
+  <%= date_select("appointment", "date", prompt: {day: 'Select day', month: 'Select month', year: 'Select year'}) %>
+  <br><br>
+
+  <%= f.label :start %>
+  <%= time_select("appointment", "start", {prompt: true, ampm: true}) %>
+  <br><br>
+
+  <%= f.label :end %>
+  <%= time_select("appointment", "end", {prompt: true, ampm: true}) %>
+  <br><br>
+
+  <%= f.label :comments %>
+  <%= f.text_area :comments %>
+  <br><br>
+  <%= f.submit %>
+<% end %>
