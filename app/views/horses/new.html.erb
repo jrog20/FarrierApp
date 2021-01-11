@@ -1,99 +1,95 @@
-<h1>1) Add a New Horse</h1>
-
-# Add _errors partial back in here
-
-<%= form_for @horse do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br><br>
-  <%= f.label "Needs Shoes?" %>
-  <%= f.check_box :needs_shoes %>
-  <br><br>
-  <%= f.label "Front Shoes?" %>
-  <%= f.check_box :front_shoes %>
-  <br><br>
-  <%= f.label "Hind Shoes?" %>
-  <%= f.check_box :hind_shoes %>
-  <br><br>
-  <%= f.label "Winter Shoes?" %>
-  <%= f.check_box :winter_shoes %>
-  <br><br>
-  <%= f.label "Pads?" %>
-  <%= f.check_box :pads %>
-  <br><br>
-  <%= f.label :shoe_size %>
-  <%= f.number_field :shoe_size %>
-  <br><br>
-  <%= f.label :temperament %>
-  <%= f.text_area :temperament %>
-  <br><br>
-  <%= f.label :schedule %>
-  <%= f.text_field :schedule %>
-  <br><br>
-  <%= f.label :comments %>
-  <%= f.text_area :comments %>
-  <br><br>
-
-<h1>2) Select or Create a Barn</h1>
-
-  <h3><%= f.label "Select an Existing Barn:" %></h3>
-  <%= f.collection_select :barn_id, Barn.all, :id, :name, include_blank: true %>
-
-  <h3>Or Create a New Barn:</h3>
-  <%= f.fields_for :barn do |b| %>
-    <%= b.label :name %>
-    <%= b.text_field :name %>
+<div class="row">
+  <div class="column">
+    <h2>1) Add a New Horse</h2>
+    # Add _errors partial back in here
+    <p><%= form_for @horse do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br><br>
+      <%= f.label "Needs Shoes?" %>
+      <%= f.check_box :needs_shoes %>
+      <br><br>
+      <%= f.label "Front Shoes?" %>
+      <%= f.check_box :front_shoes %>
+      <br><br>
+      <%= f.label "Hind Shoes?" %>
+      <%= f.check_box :hind_shoes %>
+      <br><br>
+      <%= f.label "Winter Shoes?" %>
+      <%= f.check_box :winter_shoes %>
+      <br><br>
+      <%= f.label "Pads?" %>
+      <%= f.check_box :pads %>
+      <br><br>
+      <%= f.label :shoe_size %>
+      <%= f.number_field :shoe_size %>
+      <br><br>
+      <%= f.label :temperament %>
+      <%= f.text_area :temperament %>
+      <br><br>
+      <%= f.label :schedule %>
+      <%= f.text_field :schedule %>
+      <br><br>
+      <%= f.label :comments %>
+      <%= f.text_area :comments %>
+    </p>
+  </div>
+  <div class="column">
+    <h2>2) Select or Create a Barn</h2>
+    <h3><%= f.label "Select an Existing Barn:" %></h3>
+      <p><%= f.collection_select :barn_id, Barn.all, :id, :name, include_blank: true %>
+    <h3>Or Create a New Barn:</h3>
+    <%= f.fields_for :barn do |b| %>
+      <%= b.label :name %>
+      <%= b.text_field :name %>
+      <br><br>
+      <%= b.label :manager_name %>
+      <%= b.text_field :manager_name %>
+      <br><br>
+      <%= b.label :phone %>
+      <%= b.text_field :phone %>
+      <br><br>
+      <%= b.label :email %>
+      <%= b.email_field :email %>
+      <br><br>
+      <%= b.label :address %>
+      <%= b.text_field :address %>
+      <br><br>
+      <%= b.label :city %>
+      <%= b.text_field :city %>
+      <br><br>
+      <%= b.label :state %>
+      <%= b.text_field :state %>
+      <br><br>
+      <%= b.label :zip_code %>
+      <%= b.text_field :zip_code %>
+      <br><br>
+      <%= b.label :comments %>
+      <%= b.text_area :comments %>
+    <% end %>
+    </p>
+  </div>
+  <div class="column">
+    <h2>3) Select or Create an Owner</h2>
+    <h3><%= f.label "Select an Existing Owner:" %></h3>
+      <%= f.collection_select :owner_id, Owner.all, :id, :name, include_blank: true %>
+    <h3>Or Create a New Owner:</h3>
+    <%= f.fields_for :owner do |o| %>
+      <%= o.label :name %>
+      <%= o.text_field :name %>
+      <br><br>
+      <%= o.label :phone %>
+      <%= o.text_field :phone %>
+      <br><br>
+      <%= o.label :email %>
+      <%= o.email_field :email %>
+      <br><br>
+      <%= o.label :comments %>
+      <%= o.text_area :comments %>
+    <% end %>
+    
     <br><br>
-    <%= b.label :manager_name %>
-    <%= b.text_field :manager_name %>
-    <br><br>
-    <%= b.label :phone %>
-    <%= b.text_field :phone %>
-    <br><br>
-    <%= b.label :email %>
-    <%= b.email_field :email %>
-    <br><br>
-    <%= b.label :address %>
-    <%= b.text_field :address %>
-    <br><br>
-    <%= b.label :city %>
-    <%= b.text_field :city %>
-    <br><br>
-    <%= b.label :state %>
-    <%= b.text_field :state %>
-    <br><br>
-    <%= b.label :zip_code %>
-    <%= b.text_field :zip_code %>
-    <br><br>
-    <%= b.label :comments %>
-    <%= b.text_area :comments %>
+    <%= f.submit %>
   <% end %>
-
-<h1>3) Select or Create an Owner</h1>
-  
-<h3><%= f.label "Select an Existing Owner:" %></h3>
-<%= f.collection_select :owner_id, Owner.all, :id, :name, include_blank: true %>
-
-  <h3>Or Create a New Owner:</h3>
-
-  <%= f.fields_for :owner do |o| %>
-    <%= o.label :name %>
-    <%= o.text_field :name %>
-    <br><br>
-    <%= o.label :phone %>
-    <%= o.text_field :phone %>
-    <br><br>
-    <%= o.label :email %>
-    <%= o.email_field :email %>
-    <br><br>
-    <%= o.label :comments %>
-    <%= o.text_area :comments %>
-  <% end %>
-  
-  <br><br>
-  <%= f.submit %>
-<% end %>
-
-<br><br>
-# Add validations on this page for both Barn and Owner = Required.
-<br><br>
+  </div>
+</div>
