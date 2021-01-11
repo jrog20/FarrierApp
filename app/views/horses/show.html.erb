@@ -1,35 +1,39 @@
-<h1><%= @horse.name %></h1>
-<ul>
-  Needs Shoes?: <%= @horse.needs_shoes %><br>
-  Front Shoes?: <%= @horse.front_shoes %><br>
-  Hind Shoes?: <%= @horse.hind_shoes %><br>
-  Winter Shoes?: <%= @horse.winter_shoes %><br>
-  Pads?: <%= @horse.pads %><br>
-  Shoe Size: <%= @horse.shoe_size %><br>
-  Temperament: <%= @horse.temperament %><br>
-  Schedule: <%= @horse.schedule %><br>
-  Comments: <%= @horse.comments %><br>
-</ul>
+<div class="row">
+  <div class="column">
+    <h1><%= @horse.name %></h1>
+    <ul>
+      Needs Shoes?: <%= @horse.needs_shoes %><br>
+      Front Shoes?: <%= @horse.front_shoes %><br>
+      Hind Shoes?: <%= @horse.hind_shoes %><br>
+      Winter Shoes?: <%= @horse.winter_shoes %><br>
+      Pads?: <%= @horse.pads %><br>
+      Shoe Size: <%= @horse.shoe_size %><br>
+      Temperament: <%= @horse.temperament %><br>
+      Schedule: <%= @horse.schedule %><br>
+      Comments: <%= @horse.comments %><br>
+    </ul>
+  </div>
+  <div class="column">
+    <h2>Barn: <%= @horse.barn.name %></h2>
+    <ul>
+      Barn Manager: <%= @horse.barn.manager_name %><br>
+      Phone: <%= @horse.barn.phone %><br>
+      Email: <%= @horse.barn.email %><br>
+      Address: <%= @horse.barn.address %><br>
+      City: <%= @horse.barn.city %>, <%= @horse.barn.state %> <%= @horse.barn.zip_code %><br>
+      Comments: <%= @horse.barn.comments %><br>
+    </ul>
+  </div>
+  <div class="column">
+    <h2>Owner: <%= @horse.owner.name %></h2>
+    <ul>
+      Phone: <%= @horse.owner.phone %><br>
+      Email: <%= @horse.owner.email %><br>
+      Comments: <%= @horse.owner.comments %><br>
+    </ul>
+  </div>
 
-<h2>Barn: <%= @horse.barn.name %></h2>
-<ul>
-  Barn Manager: <%= @horse.barn.manager_name %><br>
-  Phone: <%= @horse.barn.phone %><br>
-  Email: <%= @horse.barn.email %><br>
-  Address: <%= @horse.barn.address %><br>
-  City: <%= @horse.barn.city %>, <%= @horse.barn.state %> <%= @horse.barn.zip_code %><br>
-  Comments: <%= @horse.barn.comments %><br>
-</ul>
+    <p><%= link_to "List of Appointments", horse_appointments_path(@horse) %></p>
+    <p><%= link_to "Schedule a New Appointment", new_horse_appointment_path(@horse) %></p>
 
-<h2>Owner: <%= @horse.owner.name %></h2>
-<ul>
-  Phone: <%= @horse.owner.phone %><br>
-  Email: <%= @horse.owner.email %><br>
-  Comments: <%= @horse.owner.comments %><br>
-</ul>
-
-<div class="footer">
-  <p><%= link_to "List of Appointments", horse_appointments_path(@horse) %></p>
-  <p><%= link_to "Schedule a New Appointment", new_horse_appointment_path(@horse) %></p>
-</div>
-
+  </div>
