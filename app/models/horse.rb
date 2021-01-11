@@ -4,6 +4,9 @@ class Horse < ApplicationRecord
   belongs_to :owner
   belongs_to :barn
 
+  accepts_nested_attributes_for :barn
+  accepts_nested_attributes_for :owner
+
   validates :name, presence: true
 
   scope :alpha, -> { order(:name) }

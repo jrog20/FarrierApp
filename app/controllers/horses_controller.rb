@@ -21,6 +21,7 @@ class HorsesController < ApplicationController
 
   def create
     @horse = current_farrier.horses.build(horse_params)
+    binding.pry
     if @horse.save
       redirect_to horse_path(@horse)
     else
@@ -43,6 +44,6 @@ class HorsesController < ApplicationController
   private
 
   def horse_params
-    params.require(:horse).permit(:name, :needs_shoes, :front_shoes, :hind_shoes, :winter_shoes, :pads, :shoe_size, :temperament, :schedule, :comments, :farrier_id, :barn_id, :owner_id, :barn_name, :owner_name, barn_attributes: [:name], owner_attributes: [:name])
+    params.require(:horse).permit(:name, :needs_shoes, :front_shoes, :hind_shoes, :winter_shoes, :pads, :shoe_size, :temperament, :schedule, :comments, :farrier_id, :barn_id, :owner_id, :owner_name, barn_attributes: [:name, :manager_name, :phone, :email, :address, :city, :state, :zip_code, :comments], owner_attributes: [:name, :phone, :email, :comments])
   end
 end
