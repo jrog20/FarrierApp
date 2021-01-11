@@ -23,8 +23,8 @@ Specs:
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
 => Horse: :name, (plus 9 more)
 
-- [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item
-=> Farrier, *NEED TO DO VALIDATIONS FOR /ALL/ OTHER MODELS - REQUIRED FILEDS*
+- [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item
+=> Farrier, Horse, Owner, Barn
 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 
@@ -47,7 +47,6 @@ Horse.joins(:appointments).group(:id) => groups each Horse's appointments togeth
 # Finally, order them by the Horse w/the most appointments
 Horse.joins(:appointments).group(:id).order('count(horses.id) desc')
 
-
 - [x] Include signup
 
 - [x] Include login
@@ -63,8 +62,9 @@ Horse.joins(:appointments).group(:id).order('count(horses.id) desc')
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 => horses/:id/appointments/new
 
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
-*REQUIRED FIELDS (name, etc) ON NEW FORM CREATION OF HORSES, APPOINTMENTS, ETC.*
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+=> /horses/new => horse name, barn name, owner name
+=> /horse/:id/appointments/new => appointment date
 
 Confirm:
 - [ ] The application is pretty DRY
