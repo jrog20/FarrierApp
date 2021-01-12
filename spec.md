@@ -28,6 +28,12 @@ Specs:
 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 
+=> Horse.shoes_this_week URL: /horses/shoes_this_week
+Page lists shoe inventory needed for horse appointments this week
+
+=> Horse.shoes_list URL: /horses/shoes_list
+Page lists inventory needed for all horses, by shoe size
+
 *OPTIONS*
 => Return things in order: 
   - Horse's appointments in order
@@ -37,6 +43,8 @@ Specs:
 => Horse.oldest_client URL: /horses/oldest_client
 
 => Horse.most_appointments URL: /horses/most_appointments
+
+* if need help w/scope method: Review MyBlog Post.rb model
 
 # First, scope method can only view attributes for that model, so must join w/other migration that you want to include attributes:
 Horse.joins(:appointments) 
