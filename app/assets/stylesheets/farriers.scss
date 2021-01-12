@@ -3,3 +3,13 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 @import "simple_calendar";
+
+.center {
+  text-align: center;
+  border: 3px solid rgb(36, 27, 124);
+}
+
+.center p {
+  font-weight: bold;
+  font-style: italic;
+}
