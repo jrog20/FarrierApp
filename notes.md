@@ -1,31 +1,30 @@
 TO DO:
 
 [ ] On app/views/appointments/_form.html.erb, fix drop-down list of horses; when creating a new appointment from a farrier/show page, the horse selection should only by the horses that belong to that farrier.
+
 [ ] Create helper methods: Take logic out of views. Only talks to views (does not touch db)
-[ ] Add ability to edit and delete a horse.
+
 [ ] Add edit and delete links/buttons to horses/:id (show) page.
 
-def edit
+  def edit
     @artist = Artist.find(params[:id])
   end
 
   def update
-    @artist = Artist.find(params[:id])
-
-    @artist.update(artist_params)
-
-    if @artist.save
-      redirect_to @artist
+    @horse = Horse.find(params[:id])
+    @horse.update(horse_params)
+    if @horse.save
+      redirect_to @horse
     else
       render :edit
     end
   end
 
   def destroy
-    @artist = Artist.find(params[:id])
-    @artist.destroy
-    flash[:notice] = "Artist deleted."
-    redirect_to artists_path
+    @horse = Horse.find(params[:id])
+    @horse.destroy
+    flash[:notice] = "Horse deleted."
+    redirect_to horses_path
   end
 
 User Story:
