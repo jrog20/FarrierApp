@@ -1,12 +1,12 @@
-<h2>Welcome <%= @farrier.first_name %> <%= @farrier.last_name %>!</h2>
-
-<strong><em>Inspirational Quote: <%= Quotable.random %></strong></em>
+<div class="center">
+  <h2>Welcome <%= @farrier.first_name %> <%= @farrier.last_name %>!</h2>
+  <p>Today's Quote: <%= Quotable.random %></p>
+</div>
  
 <h2>Today's Appointments:</h2>
-
-<% @farrier.horses.each do |horse| %>
-  <% horse.appointments.each do |appointment| %>
-    <% if appointment.date == Date.today %>
+  <% @farrier.horses.each do |horse| %>
+    <% horse.appointments.each do |appointment| %>
+      <% if appointment.date == Date.today %>
       <p>  
       <%= link_to horse.name, horse_path(horse) %><br>    
       Date: <%= appointment.date.strftime("%m/%d/%Y") if appointment.date %><br>
@@ -14,9 +14,9 @@
       End time: <%= appointment.end.strftime("%I:%M %p") if appointment.end %><br>
       Comments: <%= appointment.comments if appointment.comments %>
       </p>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
 <%= month_calendar do |date| %>
   <%= date %>
