@@ -1,42 +1,7 @@
 TO DO:
 
-Add back to _errors.html.erb
-
-<% if object.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(object.errors.count, "error") %> prohibited this from being saved:</h2>
-
-    <ul>
-      <% object.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-[ ] Understand how (partial form?) to create a barn and owner at the same time as creating a horse.
-
-<%= f.collection_select :barn_id, Barn.all, :id, :name, :prompt => true %>
-  
-<%= render partial: "barns/form", locals: {barn: @barn} %>
-
--or
-
-<%= form_for @horse do |f| %>
-  <%= f.text_field :barn_name, list: "barns_autocomplete" %>
-  <datalist id="barns_autocomplete">
-    <% Barn.all.each do |barn| %>
-      <option value="<%= barn.name %>">
-    <% end %>
-  </datalist>
-  <textarea name="horse[comments]"></textarea>
-  <%= f.submit %>
-<% end %>
-
-[ ] Fix all validations in views!
-[ ] Horse: add validation - a horse must have a barn -AND- owner when created…Can’t save the horse otherwise!
+[ ] On app/views/appointments/_form.html.erb, fix drop-down list of horses; when creating a new appointment from a farrier/show page, the horse selection should only by the horses that belong to that farrier.
 [ ] Create helper methods: Take logic out of views. Only talks to views (does not touch db)
-
 [ ] Add ability to edit and delete a horse.
 [ ] Add edit and delete links/buttons to horses/:id (show) page.
 
