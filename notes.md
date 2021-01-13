@@ -1,31 +1,14 @@
 TO DO:
 
+[ ] Add edit barn link/button to horses/:id (show) page
+[ ] Add edit owner link/button to horses/:id (show) page
+
 [ ] On app/views/appointments/_form.html.erb, fix drop-down list of horses; when creating a new appointment from a farrier/show page, the horse selection should only by the horses that belong to that farrier.
 
 [ ] Create helper methods: Take logic out of views. Only talks to views (does not touch db)
 
-[ ] Add edit and delete links/buttons to horses/:id (show) page.
-
-  def edit
-    @horse = Horse.find(params[:id])
-  end
-
-  def update
-    @horse = Horse.find(params[:id])
-    @horse.update(horse_params)
-    if @horse.save
-      redirect_to @horse
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @horse = Horse.find(params[:id])
-    @horse.destroy
-    flash[:notice] = "Horse deleted."
-    redirect_to horses_path
-  end
+[x] Add edit horse link/button to horses/:id (show) page
+[ ] Add delete horse link/button to horses/:id (show) page 
 
 [ ] Refactor
 => controllers
@@ -34,6 +17,8 @@ TO DO:
 
 [ ] Refactor farriers/show
 Appointment.where(farrier_id: current_farrier, horse_id: current_farrier.horses, horse.appointment.date == Date.today)
+
+[ ] Connect calendar gem w/farrier appointments
 
 User Story:
 
