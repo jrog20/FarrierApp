@@ -9,8 +9,6 @@ class Horse < ApplicationRecord
 
   validates :name, presence: true
 
-  scope :alpha, -> { order(:name) }
-
   def barn_attributes=(attr)
     self.barn = Barn.find_or_create_by(attr) if !attr[:name].blank?
   end
