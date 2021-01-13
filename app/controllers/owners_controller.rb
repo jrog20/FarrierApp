@@ -11,6 +11,25 @@ class OwnersController < ApplicationController
     @owner = Owner.find_by_id(params[:id])
   end
 
+  def edit
+    @owner = Owner.find_by_id(params[:id])
+  end
+
+  def update
+    @horse = current_horse
+    @owner = Owner.find_by_id(params[:id])
+    @owner.update(owner_params)
+    if @owner.save
+      redirect_to @horse
+    else
+      render :edit
+    end
+  end
+
+  def index
+    @owner = Owner.all
+  end
+
   private
 
   def owner_params
