@@ -13,7 +13,7 @@
       Comments: <%= @horse.comments %><br>
     </ul>
     <p><%= button_to "Edit Horse", edit_horse_path(@horse) %></p>
-    <p><%= link_to 'Delete', horse_path(@horse), method: :delete, data: {confirm: "Are you sure"} %></p>
+    <p><%= button_to "Delete Horse", horse_path(@horse), method: :delete, data: {confirm: "Are you sure"} %></p>
 
     <br><br>
     <h3>Appointments:</h3>
@@ -30,6 +30,7 @@
       City: <%= @horse.barn.city %>, <%= @horse.barn.state %> <%= @horse.barn.zip_code %><br>
       Comments: <%= @horse.barn.comments %><br>
     </ul>
+    <p><%= button_to "Edit Barn", edit_barn_path(@horse.barn) %></p>
   </div>
   <div class="column">
     <h2>Owner: <%= @horse.owner.name %></h2>
@@ -38,5 +39,6 @@
       Email: <%= @horse.owner.email %><br>
       Comments: <%= @horse.owner.comments %><br>
     </ul>
+    <p><%= button_to "Edit Owner", edit_owner_path(@horse.owner) %></p>
   </div>
 </div>
