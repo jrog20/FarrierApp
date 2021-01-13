@@ -11,6 +11,24 @@ class BarnsController < ApplicationController
     @barn = Barn.find_by_id(params[:id])
   end
 
+  def edit
+    @barn = Barn.find_by_id(params[:id])
+  end
+
+  def update
+    @barn = Barn.find_by_id(params[:id])
+    @barn.update(barn_params)
+    if @barn.save
+      redirect_to barns_path
+    else
+      render :edit
+    end
+  end
+
+  def index
+    @barns = Barn.all
+  end
+
   private
 
   def barn_params
