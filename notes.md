@@ -7,7 +7,7 @@ TO DO:
 [ ] Add edit and delete links/buttons to horses/:id (show) page.
 
   def edit
-    @artist = Artist.find(params[:id])
+    @horse = Horse.find(params[:id])
   end
 
   def update
@@ -26,6 +26,14 @@ TO DO:
     flash[:notice] = "Horse deleted."
     redirect_to horses_path
   end
+
+[ ] Refactor
+=> controllers
+=> views - partials
+=> views - move logic out
+
+[ ] Refactor farriers/show
+Appointment.where(farrier_id: current_farrier, horse_id: current_farrier.horses, horse.appointment.date == Date.today)
 
 User Story:
 
