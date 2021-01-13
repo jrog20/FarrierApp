@@ -27,7 +27,7 @@ class OwnersController < ApplicationController
   end
 
   def index
-    @owner = Owner.all
+    @owners = Owner.all.alpha
   end
 
   private

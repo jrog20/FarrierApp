@@ -26,7 +26,7 @@ class BarnsController < ApplicationController
   end
 
   def index
-    @barns = Barn.all
+    @barns = Barn.all.alpha
   end
 
   private
