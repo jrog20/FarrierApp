@@ -20,6 +20,12 @@
         <li>|</li>  
         <li><%= link_to "My Horses", farrier_horses_path(current_farrier) %></li>
         <li>|</li>
+        <li><%= link_to "My Appointments", farrier_appointments_path(current_farrier) %></li>
+        <li>|</li>
+        <li><%= link_to "My Barns", barns_path(current_farrier) %></li>
+        <li>|</li>
+        <li><%= link_to "My Owners", owners_path(current_farrier) %></li>
+        <li>|</li>
         <li><%= link_to "Add a Horse", new_horse_path %></li>
         <li>|</li>
         <li><%= link_to "Add an Appointment", new_appointment_path %></li>
