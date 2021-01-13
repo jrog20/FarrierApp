@@ -1,0 +1,10 @@
+<h1>My Horse's Owners</h1>
+
+<% @owners.each do |owner| %>
+  <ul>
+  Name: <%= owner.name %><br>
+  Phone: <%= owner.phone %><br>
+  Email: <%= owner.email %><br>
+  Comments: <%= owner.comments %><br>
+  </ul>
+<% end %>
