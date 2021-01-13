@@ -11,8 +11,11 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#omniauth' 
 
-  post 'horses/:id/edit' => 'horses#edit'
-  delete 'horses/:id/destroy' => 'horses#destroy'
+  post '/horses/:id/edit' => 'horses#edit'
+  delete '/horses/:id' => 'horses#destroy'
+
+  post '/barns/:id/edit' => 'barns#edit'
+  post '/owners/:id/edit' => 'owners#edit'
 
   resources :farriers do
     resources :horses, only: [:index, :new, :create]
@@ -21,6 +24,9 @@ Rails.application.routes.draw do
 
   resources :horses do
     resources :appointments, only: [:index, :new, :create]
+    # added new:
+    resources :barns, only: [:index, :new, :create]
+    resources :owners, only: [:index, :new, :create]
   end
 
   resources :appointments
