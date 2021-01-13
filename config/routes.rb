@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#omniauth' 
 
   post 'horses/:id/edit' => 'horses#edit'
+  delete 'horses/:id/destroy' => 'horses#destroy'
 
   resources :farriers do
     resources :horses, only: [:index, :new, :create]

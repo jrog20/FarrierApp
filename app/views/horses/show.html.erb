@@ -13,7 +13,8 @@
       Comments: <%= @horse.comments %><br>
     </ul>
     <p><%= button_to "Edit Horse", edit_horse_path(@horse) %></p>
-    <p><%= button_to "Delete Horse", {action: :destroy, id: @horse.id }, method: :delete, data: {confirm: 'Are you sure?'} %></p>
+    <p><%= link_to 'Delete', horse_path(@horse), method: :delete, data: {confirm: "Are you sure"} %></p>
+
     <br><br>
     <h3>Appointments:</h3>
     <p><%= button_to "Appointments List", horse_appointments_path(@horse) %></p>
