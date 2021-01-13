@@ -1,0 +1,15 @@
+<h1>My Barns</h1>
+
+<% @barns.each do |barn| %>
+  <ul>
+  Barn: <%= barn.name %><br>
+  Manager: <%= barn.manager_name %><br>
+  Phone: <%= barn.phone %><br>
+  Email: <%= barn.email %><br>
+  Address: <%= barn.address %><br>
+  City: <%= barn.city %><br>
+  State: <%= barn.state %><br>
+  Zip Code: <%= barn.zip_code %><br>
+  Comments: <%= barn.comments %><br>
+  </ul>
+<% end %>
