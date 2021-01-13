@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#omniauth' 
 
+  post 'horses/:id/edit' => 'horses#edit'
+
   resources :farriers do
     resources :horses, only: [:index, :new, :create]
     resources :appointments, only: [:index, :new, :create]

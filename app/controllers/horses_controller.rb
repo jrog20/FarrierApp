@@ -22,7 +22,7 @@ class HorsesController < ApplicationController
   def create
     @horse = current_farrier.horses.build(horse_params)
     if @horse.save
-      redirect_to horse_path(@horse)
+      redirect_to @horse
     else
       render :new
     end
@@ -38,6 +38,19 @@ class HorsesController < ApplicationController
 
   def update
     @horse = Horse.find_by_id(params[:id])
+    @horse.update(horse_params)
+    if @horse.save
+      redirect_to @horse
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @horse = Horse.find_by_id(params[:id])
+    @horse.destroy
+    flash[:notice] = "Horse deleted."
+    redirect_to horses_path
   end
 
   private
