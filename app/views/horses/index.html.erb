@@ -1,12 +1,9 @@
 <h1>My Horses</h1>
 
-Should this page be ordered by Barn?
-
   <% @horses.each do |horse| %>
     <ul>
       Name: <%= link_to horse.name, horse_path(horse) %><br>
       Barn: <%= horse.barn.name %><br>
       Owner: <%= horse.owner.name %><br>
-      <br>
     </ul>
   <% end %>
