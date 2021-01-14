@@ -1,2 +1,11 @@
-<h1>Barn Show Page</h1>
-Barn Name: <%= @barn.name %>
+<h1><%= @barn.name %></h1>
+  Manager: <%= @barn.manager_name %><br>
+  Phone: <%= @barn.phone %><br>
+  Email: <%= @barn.email %><br>
+  Address: <%= @barn.address %><br>
+  City: <%= @barn.city %><br>
+  State: <%= @barn.state %><br>
+  Zip Code: <%= @barn.zip_code %><br>
+  Comments: <%= @barn.comments %><br>
+
+  <p><%= button_to "Edit Barn", edit_barn_path(@barn) %></p>

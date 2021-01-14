@@ -2,9 +2,6 @@
 
 <% @owners.each do |owner| %>
   <ul>
-  Name: <%= owner.name %><br>
-  Phone: <%= owner.phone %><br>
-  Email: <%= owner.email %><br>
-  Comments: <%= owner.comments %><br>
+  <%= link_to owner.name, owner %><br>
   </ul>
 <% end %>

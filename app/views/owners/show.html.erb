@@ -1,2 +1,6 @@
-<h1>Owner Show Page</h1>
-Owner Name: <%= @owner.name %>
+<h1><%= @owner.name %></h1>
+  Phone: <%= @owner.phone %><br>
+  Email: <%= @owner.email %><br>
+  Comments: <%= @owner.comments %><br>
+
+  <p><%= button_to "Edit Owner", edit_owner_path(@owner) %></p>
