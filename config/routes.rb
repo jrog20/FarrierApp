@@ -25,8 +25,8 @@ Rails.application.routes.draw do
   resources :horses do
     resources :appointments, only: [:index, :new, :create]
     # added new:
-    resources :barns, only: [:index, :new, :create]
-    resources :owners, only: [:index, :new, :create]
+    # resources :barns, only: [:index, :new, :create]
+    # resources :owners, only: [:index, :new, :create]
   end
 
   resources :appointments

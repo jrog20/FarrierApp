@@ -5,5 +5,5 @@
   Date: <%= @appointment.date.strftime("%m/%d/%Y") if @appointment.date %><br>
   Start time: <%= @appointment.start.strftime("%I:%M %p") if @appointment.start %><br>
   End time: <%= @appointment.end.strftime("%I:%M %p") if @appointment.end %><br>
-  Comments: <%= @appointment.comments %>
+  Comments: <%= @appointment.comments if @appointment.comments %>
 </p>

@@ -17,8 +17,8 @@
 
     <br><br>
     <h3>Appointments:</h3>
-    <p><%= button_to "Appointments List", horse_appointments_path(@horse) %></p>
-    <p><%= button_to "Schedule a New Appointment", new_horse_appointment_path(@horse) %></p>
+    <p><%= link_to "Appointments List", horse_appointments_path(@horse) %></p>
+    <p><%= link_to "Schedule a New Appointment", new_horse_appointment_path(@horse) %></p>
   </div>
   <div class="column">
     <h2>Barn: <%= @horse.barn.name %></h2>
