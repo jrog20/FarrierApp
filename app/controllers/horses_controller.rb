@@ -50,7 +50,7 @@ class HorsesController < ApplicationController
     @horse = Horse.find_by_id(params[:id])
     @horse.destroy
     flash[:notice] = "Horse deleted."
-    redirect_to horses_path
+    render :index
   end
 
   private

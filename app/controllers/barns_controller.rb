@@ -19,7 +19,7 @@ class BarnsController < ApplicationController
     @barn = Barn.find_by_id(params[:id])
     @barn.update(barn_params)
     if @barn.save
-      redirect_to barns_path
+      redirect_to @barn
     else
       render :edit
     end
