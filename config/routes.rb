@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   post '/barns/:id/edit' => 'barns#edit'
   post '/owners/:id/edit' => 'owners#edit'
+  post '/appointments/:id/edit' => 'appointments#edit'
 
   get '/horses/client_flagged' => 'horses#client_flagged'
 

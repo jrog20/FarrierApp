@@ -7,5 +7,6 @@
   Start time: <%= appointment.start.strftime("%I:%M %p") if appointment.start %><br>
   End time: <%= appointment.end.strftime("%I:%M %p") if appointment.end %><br>
   Comments: <%= appointment.comments if appointment.comments %><br>
+  <%= button_to "Edit", edit_appointment_path(@horse) if @horse %>
   </ul>
 <% end %>

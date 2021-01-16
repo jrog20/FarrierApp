@@ -36,6 +36,7 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
+    @horse = Horse.find_by_id(params[:id])
   end
 
   def update
