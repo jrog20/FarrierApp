@@ -27,7 +27,7 @@ class OwnersController < ApplicationController
   end
 
   def index
-    @owners = Owner.all.alpha
+    @owners = current_farrier.owners.alpha.uniq
   end
 
   private
