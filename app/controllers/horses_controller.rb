@@ -1,5 +1,6 @@
 class HorsesController < ApplicationController
   before_action :redirect_if_not_logged_in
+  before_action :set_horse, only: [:show, :edit, :update, :destroy]
   
   def index
     if params[:farrier_id] && @farrier = Farrier.find_by_id(params[:farrier_id])
@@ -29,15 +30,12 @@ class HorsesController < ApplicationController
   end
 
   def show
-    @horse = Horse.find_by_id(params[:id])
   end
 
   def edit
-    @horse = Horse.find_by_id(params[:id])
   end
 
   def update
-    @horse = Horse.find_by_id(params[:id])
     @horse.update(horse_params)
     if @horse.save
       redirect_to @horse
@@ -47,15 +45,17 @@ class HorsesController < ApplicationController
   end
 
   def destroy
-    @horse = Horse.find_by_id(params[:id])
     @horse.destroy
-    flash[:notice] = "Horse deleted."
-    render :index
+    redirect_to root_path
   end
 
   private
 
   def horse_params
     params.require(:horse).permit(:name, :needs_shoes, :front_shoes, :hind_shoes, :winter_shoes, :pads, :shoe_size, :temperament, :schedule, :comments, :farrier_id, :barn_id, :owner_id, :owner_name, barn_attributes: [:name, :manager_name, :phone, :email, :address, :city, :state, :zip_code, :comments], owner_attributes: [:name, :phone, :email, :comments])
+  end
+
+  def set_horse
+    @horse = Horse.find_by_id(params[:id])
   end
 end
