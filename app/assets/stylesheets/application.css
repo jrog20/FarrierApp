@@ -101,7 +101,6 @@ ul.topnav li {
   float: left;
   width: 33.33%;
   padding: 10px;
-  /* height: 300px; Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -115,4 +114,8 @@ ul.topnav li {
   float: left;
   width: 50%;
   padding: 10px;
+}
+
+.field_with_erros input[type=’text’]{
+  border: 1px solid red;
 }

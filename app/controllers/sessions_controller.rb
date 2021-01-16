@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to farrier_path(farrier)
     else
       flash[:message] = "Incorrect login information. Please try again."
-      redirect_to login_path
+      render "sessions/new"
     end
   end
 
