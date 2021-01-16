@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post '/barns/:id/edit' => 'barns#edit'
   post '/owners/:id/edit' => 'owners#edit'
 
+  get '/horses/client_flagged' => 'horses#client_flagged'
+
   resources :farriers do
     resources :horses, only: [:index, :new, :create]
     resources :appointments, only: [:index, :new, :create]
@@ -32,5 +34,4 @@ Rails.application.routes.draw do
   resources :appointments
   resources :barns
   resources :owners
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

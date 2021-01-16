@@ -3,6 +3,7 @@ class Horse < ApplicationRecord
   has_many :appointments
   belongs_to :owner
   belongs_to :barn
+  scope :client_flagged, -> { where(flagged: true) }
 
   accepts_nested_attributes_for :barn
   accepts_nested_attributes_for :owner
