@@ -1,4 +1,10 @@
 class FarriersController < ApplicationController
+  
+  def show
+    @farrier = Farrier.find_by_id(params[:id])
+    redirect_to '/' if !@farrier
+  end
+  
   def new
     @farrier = Farrier.new
   end
@@ -10,11 +16,6 @@ class FarriersController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @farrier = Farrier.find_by_id(params[:id])
-    redirect_to '/' if !@farrier
   end
 
   private

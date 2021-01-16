@@ -12,6 +12,9 @@ class AppointmentsController < ApplicationController
       @appointments = Appointment.all.order(:date)
     end
   end
+
+  def show
+  end
   
   def new
     if params[:horse_id] && @horse = Horse.find_by_id(params[:horse_id])
@@ -30,9 +33,6 @@ class AppointmentsController < ApplicationController
     else
       render :new
     end
-  end
-  
-  def show
   end
 
   def edit

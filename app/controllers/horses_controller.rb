@@ -10,6 +10,9 @@ class HorsesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def new
     if params[:farrier_id] && @farrier = Farrier.find_by_id(params[:farrier_id])
       @horse = @farrier.horses.build
@@ -27,9 +30,6 @@ class HorsesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
   end
 
   def edit
