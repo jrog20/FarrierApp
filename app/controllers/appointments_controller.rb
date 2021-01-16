@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
-  
+  before_action :set_appointment, only: [:show, :edit, :update]
+
   def index
     # if it is nested & we can find the horse (prevent nil class error) & set to instance variable
     if params[:horse_id] && @horse = Horse.find_by_id(params[:horse_id])
@@ -32,20 +33,21 @@ class AppointmentsController < ApplicationController
   end
   
   def show
-    @appointment = Appointment.find_by_id(params[:id])
   end
 
   def edit
-    @appointment = Appointment.find_by_id(params[:id])
   end
 
   def update
-    @appointment = Appointment.find_by_id(params[:id])
   end
 
   private
 
   def appointment_params
     params.require(:appointment).permit(:start, :end, :date, :comments, :farrier_id, :horse_id)
+  end
+
+  def set_appointment
+    @appointment = Appointment.find_by_id(params[:id])
   end
 end
