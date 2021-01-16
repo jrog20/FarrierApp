@@ -21,9 +21,9 @@ Links on farrier show page:
 [ ] Fix delete horse link/button to horses/:id (show) page 
 
 [ ] Refactor
-=> controllers
-=> views - partials
-=> views - move logic out
+  [x] controllers
+  [x] views - partials
+  [ ] views - move logic out
 
 [ ] Connect calendar gem w/farrier appointments
 
