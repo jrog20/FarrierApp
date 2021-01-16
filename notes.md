@@ -4,8 +4,8 @@ TO DO:
 [x] Add edit owner link/button to horses/:id (show) page
 
 Links on farrier show page:
-[ ] Fix 'My Barns': barn controller #index, Only show current_farrier's barns
-[ ] Fix 'My Owners': owner controller #index, Only show current_farrier's owners
+[x] Fix 'My Barns': barn controller #index, Only show current_farrier's barns
+[x] Fix 'My Owners': owner controller #index, Only show current_farrier's owners
 [ ] Fix 'My Appointments' => link broken
 [ ] Fix 'Add an Appointment': appointments controller #index (app/views/appointments/_form.html.erb), Only show current_farrier's horses
 

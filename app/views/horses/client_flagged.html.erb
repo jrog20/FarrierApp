@@ -1,1 +1,17 @@
 <h1>Flagged Clients</h1>
+
+<% current_farrier.horses.each do |horse| %>
+  <% if horse.flagged %><br>
+  <ul>
+    <h2><%= horse.name %></h2>
+    Front Shoes?: <%= horse.front_shoes %><br>
+    Hind Shoes?: <%= horse.hind_shoes %><br>
+    Winter Shoes?: <%= horse.winter_shoes %><br>
+    Pads?: <%= horse.pads %><br>
+    Shoe Size: <%= horse.shoe_size %><br>
+    Temperament: <%= horse.temperament %><br>
+    Schedule: <%= horse.schedule %><br>
+    Comments: <%= horse.comments %><br>
+  </ul>
+  <% end %>
+<% end %>
