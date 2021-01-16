@@ -9,8 +9,6 @@ Links on farrier show page:
 [ ] Fix 'My Appointments' => link broken
 [ ] Fix 'Add an Appointment': appointments controller #index (app/views/appointments/_form.html.erb), Only show current_farrier's horses
 
-*Something like => .where(farrier_id: current_farrier, horse_id: current_farrier.horses)*
-
 [ ] On app/views/appointments/_form.html.erb, fix drop-down list of horses; when creating a new appointment from a farrier/show page, the horse selection should only by the horses that belong to that farrier.
 
 [ ] Create helper methods: Take logic out of views. Only talks to views (does not touch db)
@@ -23,9 +21,6 @@ Links on farrier show page:
 => controllers
 => views - partials
 => views - move logic out
-
-[ ] Refactor farriers/show
-Appointment.where(farrier_id: current_farrier, horse_id: current_farrier.horses, horse.appointment.date == Date.today)
 
 [ ] Connect calendar gem w/farrier appointments
 
