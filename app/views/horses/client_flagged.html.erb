@@ -2,16 +2,29 @@
 
 <% current_farrier.horses.each do |horse| %>
   <% if horse.flagged %><br>
-  <ul>
-    <h2><%= horse.name %></h2>
-    Front Shoes?: <%= horse.front_shoes %><br>
-    Hind Shoes?: <%= horse.hind_shoes %><br>
-    Winter Shoes?: <%= horse.winter_shoes %><br>
-    Pads?: <%= horse.pads %><br>
-    Shoe Size: <%= horse.shoe_size %><br>
-    Temperament: <%= horse.temperament %><br>
-    Schedule: <%= horse.schedule %><br>
-    Comments: <%= horse.comments %><br>
-  </ul>
+  <div class="row">
+    <div class="column_two">
+      <ul>
+        <h2><%= horse.name %></h2>
+        Front Shoes?: <%= horse.front_shoes %><br>
+        Hind Shoes?: <%= horse.hind_shoes %><br>
+        Winter Shoes?: <%= horse.winter_shoes %><br>
+        Pads?: <%= horse.pads %><br>
+        Shoe Size: <%= horse.shoe_size %><br>
+        Temperament: <%= horse.temperament %><br>
+        Schedule: <%= horse.schedule %><br>
+        Comments: <%= horse.comments %><br>
+      </ul>
+    </div>
+    <div class="column_two">
+      <h2>Owner: <%= horse.owner.name %></h2>
+      <ul>
+        Phone: <%= horse.owner.phone %><br>
+        Email: <%= horse.owner.email %><br>
+        Comments: <%= horse.owner.comments %><br>
+        <br><br><br><br><br>
+      </ul>
+    </div>
   <% end %>
 <% end %>
+</div>
