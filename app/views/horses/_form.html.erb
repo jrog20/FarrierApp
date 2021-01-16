@@ -2,9 +2,6 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br><br>
-  <%= f.label "Needs Shoes?" %>
-  <%= f.check_box :needs_shoes %>
-  <br><br>
   <%= f.label "Front Shoes?" %>
   <%= f.check_box :front_shoes %>
   <br><br>
@@ -29,3 +26,8 @@
   <%= f.label :comments %>
   <%= f.text_area :comments %>
   <br><br>
+  <%= f.label "Flagged?" %>
+  <%= f.check_box :flagged %>
+  <br><br>
+  <%= f.submit %>
+<% end %>

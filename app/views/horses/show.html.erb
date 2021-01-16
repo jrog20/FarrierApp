@@ -2,7 +2,6 @@
   <div class="column">
     <h1><%= @horse.name %></h1>
     <ul>
-      Needs Shoes?: <%= @horse.needs_shoes %><br>
       Front Shoes?: <%= @horse.front_shoes %><br>
       Hind Shoes?: <%= @horse.hind_shoes %><br>
       Winter Shoes?: <%= @horse.winter_shoes %><br>
@@ -11,6 +10,7 @@
       Temperament: <%= @horse.temperament %><br>
       Schedule: <%= @horse.schedule %><br>
       Comments: <%= @horse.comments %><br>
+      Flagged?: <%= @horse.flagged %><br>
     </ul>
     <p><%= button_to "Edit Horse", edit_horse_path(@horse) %></p>
     <p><%= button_to "Delete Horse", horse_path(@horse), method: :delete, data: {confirm: "Are you sure"} %></p>

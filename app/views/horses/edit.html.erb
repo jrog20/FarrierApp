@@ -1,36 +1,4 @@
 <%= render partial: "layouts/errors", locals: {object: @horse} %>
 
 <h1>Editing <%= @horse.name %></h1>
-    <%= form_for @horse do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br><br>
-    <%= f.label "Needs Shoes?" %>
-    <%= f.check_box :needs_shoes %>
-    <br><br>
-    <%= f.label "Front Shoes?" %>
-    <%= f.check_box :front_shoes %>
-    <br><br>
-    <%= f.label "Hind Shoes?" %>
-    <%= f.check_box :hind_shoes %>
-    <br><br>
-    <%= f.label "Winter Shoes?" %>
-    <%= f.check_box :winter_shoes %>
-    <br><br>
-    <%= f.label "Pads?" %>
-    <%= f.check_box :pads %>
-    <br><br>
-    <%= f.label :shoe_size %>
-    <%= f.number_field :shoe_size %>
-    <br><br>
-    <%= f.label :temperament %>
-    <%= f.text_area :temperament %>
-    <br><br>
-    <%= f.label :schedule %>
-    <%= f.text_field :schedule %>
-    <br><br>
-    <%= f.label :comments %>
-    <%= f.text_area :comments %>
-    <br><br>
-    <%= f.submit %>
-  <% end %>
+<%= render partial: "form", locals: {horse: @horse} %>
