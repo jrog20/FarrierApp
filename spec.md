@@ -28,6 +28,9 @@ Specs:
 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 
+Farrier wants: 
+=> Horse.flagged URL: /horses/flagged
+
 => Horse.shoes_this_week URL: /horses/shoes_this_week
 Page lists shoe inventory needed for horse appointments this week
 

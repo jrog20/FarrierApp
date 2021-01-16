@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_184137) do
+ActiveRecord::Schema.define(version: 2021_01_16_020316) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "start"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_01_07_184137) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "date"
+    t.integer "barn_id"
+    t.integer "owner_id"
     t.index ["farrier_id"], name: "index_appointments_on_farrier_id"
     t.index ["horse_id"], name: "index_appointments_on_horse_id"
   end
@@ -52,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_184137) do
 
   create_table "horses", force: :cascade do |t|
     t.string "name"
-    t.boolean "needs_shoes"
+    t.boolean "flagged"
     t.boolean "front_shoes"
     t.boolean "hind_shoes"
     t.boolean "winter_shoes"
