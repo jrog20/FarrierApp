@@ -4,7 +4,7 @@
 
   <% if !@horse %>
     <%= f.label :horse %>
-    <%= f.collection_select :horse_id, Horse.order(:name), :id, :name %>
+    <%= f.collection_select :horse_id, current_farrier.horses.order(:name), :id, :name %>
     <br><br>
   <% else %>
     <%= f.hidden_field :horse_id %>

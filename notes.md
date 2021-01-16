@@ -6,12 +6,15 @@ TO DO:
 Links on farrier show page:
 [x] Fix 'My Barns': barn controller #index, Only show current_farrier's barns
 [x] Fix 'My Owners': owner controller #index, Only show current_farrier's owners
-[ ] Fix 'My Appointments' => link broken
-[ ] Fix 'Add an Appointment': appointments controller #index (app/views/appointments/_form.html.erb), Only show current_farrier's horses
+[x] Fix 'My Appointments' => link broken
+[x] Fix 'Add an Appointment': appointments controller #index (app/views/appointments/_form.html.erb), Only show current_farrier's horses
 
-[ ] On app/views/appointments/_form.html.erb, fix drop-down list of horses; when creating a new appointment from a farrier/show page, the horse selection should only by the horses that belong to that farrier.
+[x] On app/views/appointments/_form.html.erb, fix drop-down list of horses; when creating a new appointment from a farrier/show page, the horse selection should only by the horses that belong to that farrier.
 
 [ ] Create helper methods: Take logic out of views. Only talks to views (does not touch db)
+  => Appointments: move logic to helper methods, i.e. 
+    => display_appointments; use in index and show
+    => horse_select; use in _form
 
 [x] Add edit horse link/button to horses/:id (show) page
 [x] Add delete horse link/button to horses/:id (show) page 

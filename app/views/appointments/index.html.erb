@@ -1,7 +1,8 @@
-<h1><%= @horse.name %>'s Appointments</h1>
+<h1><%= @horse.name if @horse %> Appointments</h1>
 
 <% @appointments.each do |appointment| %>
   <ul>  
+  <%= appointment.horse.name if !@horse %><br>
   Date: <%= appointment.date.strftime("%m/%d/%Y") if appointment.date %><br>
   Start time: <%= appointment.start.strftime("%I:%M %p") if appointment.start %><br>
   End time: <%= appointment.end.strftime("%I:%M %p") if appointment.end %><br>

@@ -6,10 +6,10 @@ class AppointmentsController < ApplicationController
     if params[:horse_id] && @horse = Horse.find_by_id(params[:horse_id])
       @appointments = @horse.appointments.order(:date)
     elsif params[:farrier_id] && @farrier = Farrier.find_by_id(params[:farrier_id])
-      @appointments = @farrier.appointments.order(:date)
+      @appointments = current_farrier.appointments.order(:date)
     else
       @error = flash[:message] = "That horse doesn't exist" if params[:horse_id]
-      @appointments = Appointment.all.order(:date)
+      @appointments = current_farrier.appointments.order(:date)
     end
   end
 
