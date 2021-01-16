@@ -16,7 +16,7 @@
     <div>
     <ul class="topnav">
       <% if logged_in? %>
-        <li><%= link_to "My Profile", farrier_path(current_farrier) %></li>  
+        <li><%= link_to "My Profile", farrier_path(current_farrier) %></li>
         <li>|</li>  
         <li><%= link_to "My Horses", farrier_horses_path(current_farrier) %></li>
         <li>|</li>
@@ -28,7 +28,9 @@
         <li>|</li>
         <li><%= link_to "Add a Horse", new_horse_path %></li>
         <li>|</li>
-        <li><%= link_to "Add an Appointment", new_appointment_path %></li>
+        <li><%= link_to "Add Appointment", new_appointment_path %></li>
+        <li>|</li>
+        <li><%= link_to "Flagged Clients", '/horses/client_flagged' %></li>
         <li>|</li>
         <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
       <% else %>
