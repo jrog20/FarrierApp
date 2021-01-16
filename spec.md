@@ -24,39 +24,11 @@ Specs:
 => Horse: :name, (plus 9 more)
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item
-=> Farrier, Horse, Owner, Barn
+=> Farrier, Horse, Owner, Barn, Appointment
 
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 
-Farrier wants: 
-=> Horse.flagged URL: /horses/flagged
-
-=> Horse.shoes_this_week URL: /horses/shoes_this_week
-Page lists shoe inventory needed for horse appointments this week
-
-=> Horse.shoes_list URL: /horses/shoes_list
-Page lists inventory needed for all horses, by shoe size
-
-*OPTIONS*
-=> Return things in order: 
-  - Horse's appointments in order
-  - Complete list of a farrier's upcoming appointments, in order by...
-    - Barn?, Date?
-
-=> Horse.oldest_client URL: /horses/oldest_client
-
-=> Horse.most_appointments URL: /horses/most_appointments
-
-* if need help w/scope method: Review MyBlog Post.rb model
-
-# First, scope method can only view attributes for that model, so must join w/other migration that you want to include attributes:
-Horse.joins(:appointments) 
-
-# Second, must group the items by the id attribute if you want anything other than a count of everything
-Horse.joins(:appointments).group(:id) => groups each Horse's appointments together
-
-# Finally, order them by the Horse w/the most appointments
-Horse.joins(:appointments).group(:id).order('count(horses.id) desc')
+=> Horse.client_flagged URL: /horses/client_flagged
 
 - [x] Include signup
 
@@ -78,7 +50,7 @@ Horse.joins(:appointments).group(:id).order('count(horses.id) desc')
 => /horse/:id/appointments/new => appointment date
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
+- [x] Views use partials if appropriate
