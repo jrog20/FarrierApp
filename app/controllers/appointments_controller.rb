@@ -40,6 +40,12 @@ class AppointmentsController < ApplicationController
   end
 
   def update
+    @appointment.update(appointment_params)
+    if @appointment.save
+      redirect_to @appointment
+    else
+      render :edit
+    end
   end
 
   private

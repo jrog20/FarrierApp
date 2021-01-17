@@ -1,6 +1,6 @@
 <%= render partial: "layouts/errors", locals: {object: @appointment} %>
 
-<%= form_for @appointment do |f| %>
+<%= form_with model: @appointment do |f| %>
 
   <% if !@horse %>
     <%= f.label :horse %>
