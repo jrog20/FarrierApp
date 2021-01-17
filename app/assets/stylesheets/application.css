@@ -119,3 +119,24 @@ ul.topnav li {
 .field_with_erros input[type=’text’]{
   border: 1px solid red;
 }
+
+/* Testing CSS */
+
+/* .image {
+  border-radius: 20px;
+} */
+
+.grid-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  grid-gap: 5px
+}
+
+.grid-item {
+  border-radius: 20px;
+  height: 300px;
+  width: 500px;
+  object-fit: contain;
+}
