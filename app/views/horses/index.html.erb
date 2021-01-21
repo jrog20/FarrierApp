@@ -3,7 +3,7 @@
   <% @horses.each do |horse| %>
     <ul>
       Name: <%= link_to horse.name, horse_path(horse) %><br>
-      Barn: <%= horse.barn.name %><br>
-      Owner: <%= horse.owner.name %><br>
+      Barn: <%= horse.barn.name if horse.barn %><br>
+      Owner: <%= horse.owner.name if horse.owner %><br>
     </ul>
   <% end %>
