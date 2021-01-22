@@ -36,8 +36,7 @@ class HorsesController < ApplicationController
   end
 
   def update
-    @horse.update(horse_params)
-    if @horse.save
+    if @horse.update(horse_params)
       redirect_to @horse
     else
       render :edit

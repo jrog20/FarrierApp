@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post '/appointments/:id/edit' => 'appointments#edit'
 
   get '/horses/client_flagged' => 'horses#client_flagged'
+  get '/search' => 'owners#index'
 
   resources :farriers do
     resources :horses, only: [:index, :new, :create]

@@ -10,7 +10,8 @@ class FarriersController < ApplicationController
   end
 
   def create
-    if @farrier = Farrier.create(farrier_params)
+    @farrier = Farrier.new(farrier_params)
+    if @farrier.save
       session[:farrier_id] = @farrier.id
       redirect_to farrier_path(@farrier)
     else

@@ -2,7 +2,11 @@ class OwnersController < ApplicationController
   before_action :set_owner, only: [:show, :edit, :update]
   
   def index
-    @owners = current_farrier.owners.alpha.uniq
+    if params[:query]
+      @owners = current_farrier.owners.search(params[:query]).alpha.uniq
+    else
+      @owners = current_farrier.owners.alpha.uniq
+    end
   end
 
   def show
